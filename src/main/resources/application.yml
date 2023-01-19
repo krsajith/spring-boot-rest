@@ -1,0 +1,22 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /sample-api
+spring:
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/postgres?currentSchema=dev
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      auto-commit: true
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    generate-ddl: false
+    show-sql: true
+
+message1: Default message 1
+message2: Default message 2

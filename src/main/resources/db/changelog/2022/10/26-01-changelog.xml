@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.9.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1666784580022-1" author="sajith (generated)">
+        <createTable tableName="sample_employee">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_sample_employee"/>
+            </column>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="dob" type="DATE"/>
+            <column name="designation" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="" author="">
+        <addColumn tableName="sample_employee">
+            <column name="joining_date" type="date"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="SP-2022-10-31-01" author="Sajith">
+        <sql splitStatements="false">
+            create or replace function get_all_employees(age integer)
+            returns TABLE(id integer, name character varying, dob date, designation character varying,joining_date date)
+            language sql
+            as
+            $$
+            select * from sample_employee;
+            $$;
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
