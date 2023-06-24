@@ -4,7 +4,7 @@ server:
     context-path: /sample-api
 spring:
   datasource:
-    url: jdbc:postgresql://127.0.0.1:5432/postgres?currentSchema=dev
+    url: jdbc:postgresql://127.0.0.1:5432/ctrm_becrux_dev?currentSchema=taomish
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver

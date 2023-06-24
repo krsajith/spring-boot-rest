@@ -1,0 +1,3023 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="arjun (generated)" id="1676310491027-24">
+        <createTable tableName="xceler_physicaltradeservice_internaldealticker">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="xceler_physicaltradeservice_internaldealticker_pkey"/>
+            </column>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="idt_id" type="VARCHAR(255)"/>
+            <column name="trade_date_time" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="commodity" type="VARCHAR(255)"/>
+            <column name="brand" type="VARCHAR(255)"/>
+            <column name="quantity" type="JSONB"/>
+            <column name="to_profit_center" type="VARCHAR(255)"/>
+            <column name="from_profit_center" type="VARCHAR(255)"/>
+            <column name="to_trader_name" type="VARCHAR(255)"/>
+            <column name="from_trader_name" type="VARCHAR(255)"/>
+            <column name="counterparty" type="VARCHAR(255)"/>
+            <column name="company" type="VARCHAR(255)"/>
+            <column name="trade_price" type="JSONB"/>
+            <column name="incoterm" type="VARCHAR(255)"/>
+            <column name="port" type="VARCHAR(255)"/>
+            <column name="price_type" type="VARCHAR(255)"/>
+            <column name="shipment_month" type="VARCHAR(255)"/>
+            <column name="paymentterm" type="VARCHAR(255)"/>
+            <column name="remarks" type="VARCHAR(255)"/>
+            <column name="available_qty" type="FLOAT8"/>
+            <column defaultValueNumeric="0.0" name="planned_qty" type="FLOAT8"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-25">
+        <createTable tableName="treasury_cash_booking">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="treasury_cash_booking_pkey"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="account_currency" type="VARCHAR(255)"/>
+            <column name="account_id" type="UUID"/>
+            <column name="bank_id" type="UUID"/>
+            <column name="booked_amount" type="FLOAT8"/>
+            <column name="booked_currency" type="VARCHAR(255)"/>
+            <column name="booking_id" type="VARCHAR(255)"/>
+            <column name="company_id" type="UUID"/>
+            <column name="conversion_rate" type="VARCHAR(255)"/>
+            <column name="fx_pair" type="VARCHAR(255)"/>
+            <column name="fx_rate" type="VARCHAR(255)"/>
+            <column name="post_date" type="date"/>
+            <column name="reference_number" type="VARCHAR(255)"/>
+            <column name="transaction_currency" type="VARCHAR(255)"/>
+            <column name="transaction_parent" type="VARCHAR(255)"/>
+            <column name="transaction_purpose" type="VARCHAR(255)"/>
+            <column name="transaction_source" type="VARCHAR(255)"/>
+            <column name="transaction_source_id" type="VARCHAR(255)"/>
+            <column name="transaction_source_sub_id" type="VARCHAR(255)"/>
+            <column name="transaction_status" type="VARCHAR(255)"/>
+            <column name="transaction_type" type="VARCHAR(255)"/>
+            <column name="value_date" type="date"/>
+            <column name="transaction_id" type="VARCHAR(255)"/>
+            <column name="transaction_amount" type="JSONB"/>
+            <column name="transaction_cost" type="JSONB"/>
+            <column name="account_number" type="VARCHAR(30)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-26">
+        <createTable tableName="treasury_statement_transaction">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="treasury_statement_transaction_pkey"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="amount" type="BIGINT"/>
+            <column name="credit_debit" type="VARCHAR(255)"/>
+            <column name="cs2" type="VARCHAR(255)"/>
+            <column name="transaction_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="entry_date" type="VARCHAR(255)"/>
+            <column name="account_number" type="VARCHAR(255)"/>
+            <column name="info_to_account_owner" type="VARCHAR(255)"/>
+            <column name="reference_institution" type="VARCHAR(255)"/>
+            <column name="reference_owner" type="VARCHAR(255)"/>
+            <column name="statement_line" type="VARCHAR(255)"/>
+            <column name="supplementary_details" type="VARCHAR(255)"/>
+            <column name="transaction_code" type="VARCHAR(255)"/>
+            <column name="statement_id" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-27">
+        <createTable tableName="xceler_business_master_bank_account">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="account_currency" type="VARCHAR(255)"/>
+            <column name="account_no" type="VARCHAR(255)"/>
+            <column name="bank_account_id" type="VARCHAR(255)"/>
+            <column name="min_account_balance" type="FLOAT8"/>
+            <column name="profit_center" type="VARCHAR(255)"/>
+            <column name="bank_code" type="VARCHAR(15)"/>
+            <column name="company_code" type="VARCHAR(255)"/>
+            <column name="purpose_of_account" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-28">
+        <createTable tableName="xceler_business_master_bank_master">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="bank_account_details_pk"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="attachments" type="JSONB"/>
+            <column name="bank_code" type="VARCHAR(255)"/>
+            <column name="bank_description" type="VARCHAR(255)"/>
+            <column name="bank_name" type="VARCHAR(255)"/>
+            <column name="city" type="VARCHAR(255)"/>
+            <column name="country_of_bank" type="VARCHAR(255)"/>
+            <column name="currency" type="JSONB"/>
+            <column name="purpose_of_account" type="VARCHAR(255)"/>
+            <column name="swift_code" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-29">
+        <createTable tableName="treasury_account_statement">
+            <column name="s_id" type="VARCHAR(255)">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="treasury_account_statement_pkey"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="account_currency" type="VARCHAR(255)"/>
+            <column name="account_number" type="VARCHAR(255)"/>
+            <column name="closing_available_balance" type="BIGINT"/>
+            <column name="closing_balance" type="BIGINT"/>
+            <column name="statement_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="forwarded_balance" type="BIGINT"/>
+            <column name="info_to_acc_owner" type="VARCHAR(255)"/>
+            <column name="opening_balance" type="BIGINT"/>
+            <column name="related_reference" type="VARCHAR(255)"/>
+            <column name="statement_number" type="VARCHAR(255)"/>
+            <column name="trailer" type="VARCHAR(255)"/>
+            <column name="transaction_reference_number" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-30">
+        <createTable tableName="treasury_account_balance">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="treasury_account_balance_pkey"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="account_number" type="VARCHAR(50)"/>
+            <column name="bank_code" type="VARCHAR(50)"/>
+            <column name="available_balance" type="FLOAT8"/>
+            <column name="balance_date" type="date"/>
+            <column name="account_currency" type="VARCHAR(50)"/>
+            <column name="company_currency" type="VARCHAR(50)"/>
+            <column name="balance_company" type="FLOAT8"/>
+            <column name="prev_available_balance" type="FLOAT8"/>
+            <column name="prev_balance_date" type="date"/>
+            <column name="company_code" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-31">
+        <createTable tableName="xceler_tradeplanningservice_tradelink">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="xceler_tradeplanningservice_tradelink_pkey"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="planning_id" type="VARCHAR(255)"/>
+            <column name="planned_obligation_id" type="VARCHAR(255)"/>
+            <column name="linked_with" type="VARCHAR(255)"/>
+            <column name="match_quantity" type="FLOAT8"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-32">
+        <createTable tableName="xceler_business_master_bank_limit">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="xceler_business_master_bank_limit_pkey"/>
+            </column>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="amortization_applicability" type="VARCHAR(255)"/>
+            <column name="amount" type="JSONB"/>
+            <column name="amount_fee" type="JSONB"/>
+            <column name="bank_code" type="VARCHAR(255)"/>
+            <column name="comments" type="VARCHAR(255)"/>
+            <column name="country" type="VARCHAR(255)"/>
+            <column name="end_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="entity" type="VARCHAR(255)"/>
+            <column name="facility_code" type="VARCHAR(255)"/>
+            <column name="facility_type" type="VARCHAR(255)"/>
+            <column name="fees_type" type="VARCHAR(255)"/>
+            <column name="guarantee_type" type="VARCHAR(255)"/>
+            <column name="inflow_accounts" type="JSONB"/>
+            <column name="outflow_accounts" type="JSONB"/>
+            <column name="percentage" type="VARCHAR(255)"/>
+            <column name="recall_clause" type="VARCHAR(255)"/>
+            <column name="region_for_line" type="VARCHAR(255)"/>
+            <column name="security_type" type="VARCHAR(255)"/>
+            <column name="start_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="status" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-33">
+        <createTable tableName="xceler_business_master_bank_limit_product_info">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="xceler_business_master_bank_limit_product_info_pkey"/>
+            </column>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="product" type="VARCHAR(255)"/>
+            <column name="product_limit" type="JSONB"/>
+            <column name="interest_type" type="VARCHAR(255)"/>
+            <column name="interest_rate" type="TEXT"/>
+            <column name="margin" type="VARCHAR(255)"/>
+            <column name="index" type="VARCHAR(255)"/>
+            <column name="calculation_bases" type="VARCHAR(255)"/>
+            <column name="calculation_methods" type="VARCHAR(255)"/>
+            <column name="credit_product_type" type="VARCHAR(25)"/>
+            <column name="bank_limit_uuid" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-34">
+        <createTable tableName="xceler_business_master_product_info_participant_info">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="xceler_business_master_product_info_participant_info_pkey"/>
+            </column>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="participant" type="VARCHAR(255)"/>
+            <column name="currency" type="VARCHAR(25)"/>
+            <column name="amount" type="FLOAT8"/>
+            <column name="outflow_account" type="VARCHAR(255)"/>
+            <column name="inflow_account" type="VARCHAR(255)"/>
+            <column name="product_info_uuid" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-35">
+        <createTable tableName="xceler_configservice_simple_processing_strategy">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="xceler_configservice_simple_processing_strategy_pkey"/>
+            </column>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="strategy_id" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="strategy_name" type="VARCHAR(255)"/>
+            <column name="strategy_type" type="VARCHAR(255)"/>
+            <column name="strategy_data" type="JSONB"/>
+            <column name="status" type="VARCHAR(50)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-36">
+        <createTable tableName="xceler_inventory">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="xceler_inventory_pkey"/>
+            </column>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="inventory_id" type="VARCHAR(255)"/>
+            <column name="inventory_name" type="VARCHAR(255)"/>
+            <column name="commodity" type="VARCHAR(255)"/>
+            <column name="total_capacity" type="JSONB"/>
+            <column name="inventory_uom" type="VARCHAR(255)"/>
+            <column name="inventory_currency" type="VARCHAR(255)"/>
+            <column name="grade" type="VARCHAR(255)"/>
+            <column name="brand" type="VARCHAR(255)"/>
+            <column name="mode_of_inventory" type="VARCHAR(255)"/>
+            <column name="inventory_type" type="VARCHAR(255)"/>
+            <column name="inventory_status" type="VARCHAR(255)"/>
+            <column name="stocked_quantity" type="FLOAT8"/>
+            <column name="available_capacity" type="FLOAT8"/>
+            <column name="average_price" type="FLOAT8"/>
+            <column name="valuation_method" type="VARCHAR(255)"/>
+            <column name="eod_currency" type="VARCHAR(255)"/>
+            <column name="eod_uom" type="VARCHAR(255)"/>
+            <column name="status" type="VARCHAR(50)"/>
+            <column name="storage_name" type="VARCHAR(255)"/>
+            <column name="company_name" type="VARCHAR(255)"/>
+            <column name="profit_center" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-37">
+        <createTable tableName="xceler_stock_movement">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="xceler_stock_movement_pkey"/>
+            </column>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="transfer_id" type="VARCHAR(255)"/>
+            <column name="transfer_from" type="VARCHAR(255)"/>
+            <column name="transfer_to" type="VARCHAR(255)"/>
+            <column name="commodity" type="VARCHAR(255)"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="quantity" type="JSONB"/>
+            <column name="price" type="JSONB"/>
+            <column name="internal_packaging_type" type="VARCHAR(50)"/>
+            <column name="max_number_of_package" type="INTEGER"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="stage" type="VARCHAR(255)"/>
+            <column name="counterparty_approval" type="VARCHAR(255)"/>
+            <column name="finance_approval" type="VARCHAR(255)"/>
+            <column name="trader_approval" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-38">
+        <createView fullDefinition="false" viewName="xceler_report_dailytradesummary">SELECT xpet.uuid,
+    xpet.tenantid,
+    xpet.company,
+    xpet.profitcenter,
+    xpet.profitcenterdesc,
+    xpet.tradedate,
+    xpet.tradeid,
+    xpet.externalreference,
+    xpet.tradetransactiontype,
+    xpet.tradetype,
+    xpet.commodity,
+    'Physical'::text AS instrumenttype,
+    xpet.quantity,
+    xpet.sellquantity,
+    xpet.buyquantity,
+    xpet.counterparty,
+    xpet.shipmentmonthformat,
+    xpet.shipmentmonth,
+    xpet.quantityuom,
+    xpet.incoterm,
+    xpet.port,
+    xpet.tradeprice,
+    xpet.fobvalue,
+    xpet.currency,
+    ''::text AS buysellref,
+    xpet.broker,
+    xpet.pricetype,
+        CASE
+            WHEN (xpet.pricestatus IS NULL) THEN 'NOT PRICED'::character varying
+            ELSE xpet.pricestatus
+        END AS pricestatus,
+        CASE
+            WHEN (xpet.obligationstatus IS NULL) THEN 'Confirmed'::text
+            ELSE 'Fulfilled'::text
+        END AS obligationstatus
+   FROM ( SELECT xep.uuid,
+            xep.tenant_id AS tenantid,
+            xep.company,
+            xep.profitcenter,
+            xcpd.description AS profitcenterdesc,
+            xep.trade_date_time AS tradedate,
+            xep.trade_id AS tradeid,
+            xep.external_reference AS externalreference,
+                CASE
+                    WHEN (xep.trade_transaction_type = 1) THEN 'SALES'::text
+                    ELSE 'PURCHASE'::text
+                END AS tradetransactiontype,
+            xep.trade_type AS tradetype,
+            xep.commodity,
+            'Physical'::text AS instrumenttype,
+                CASE
+                    WHEN (act.actualization_id IS NULL) THEN xppr.planned_quantity
+                    ELSE
+                    CASE
+                        WHEN (xep.trade_transaction_type = 1) THEN act.unload_quantity
+                        ELSE act.load_quantity
+                    END
+                END AS quantity,
+                CASE
+                    WHEN (xep.trade_transaction_type = 1) THEN xppr.planned_quantity
+                    ELSE (0.0)::double precision
+                END AS sellquantity,
+                CASE
+                    WHEN (xep.trade_transaction_type = 0) THEN xppr.planned_quantity
+                    ELSE (0.0)::double precision
+                END AS buyquantity,
+            xep.counterparty,
+            to_char(xep.delivery_end_date, 'MMYYYY'::text) AS shipmentmonthformat,
+            xep.delivery_end_date AS shipmentmonth,
+            xep.quantity_uom AS quantityuom,
+            xep.incoterm,
+                CASE
+                    WHEN (xep.trade_transaction_type = 0) THEN xep.load_location
+                    ELSE xep.discharge_location
+                END AS port,
+            xep.trade_price AS tradeprice,
+            xep.trade_price AS fobvalue,
+            xep.trade_price_currency AS currency,
+            ''::text AS buysellref,
+            xep.broker,
+            xep.price_type AS pricetype,
+                CASE
+                    WHEN ((xep.price_type)::text = 'Fixed'::text) THEN 'PRICED'::character varying
+                    ELSE
+                    CASE
+                        WHEN ((xep.price_type)::text &lt;&gt; 'Fixed'::text) THEN ( SELECT xtps.obligation_state
+                           FROM xceler_tradeplanningservice_plannedtradeobligationstate xtps
+                          WHERE ((xtps.uuid = xppr.uuid) AND (xtps.status = true) AND ((xtps.obligation_state)::text = 'PRICED'::text)))
+                        ELSE NULL::character varying
+                    END
+                END AS pricestatus,
+            ( SELECT xtps.obligation_state
+                   FROM xceler_tradeplanningservice_plannedtradeobligationstate xtps
+                  WHERE ((xtps.uuid = xppr.uuid) AND (xtps.status = true) AND ((xtps.obligation_state)::text = 'SETTLED'::text))) AS obligationstatus
+           FROM (((( SELECT xtp.uuid,
+                    xtp.created_by,
+                    xtp.created_timestamp,
+                    xtp.tenant_id,
+                    xtp.updated_by,
+                    xtp.updated_timestamp,
+                    xtp.brand,
+                    xtp.broker,
+                    xtp.comments,
+                    xtp.commodity,
+                    xtp.company,
+                    xtp.contract_confirmation,
+                    xtp.counterparty,
+                    xtp.delivery_end_date,
+                    xtp.delivery_start_date,
+                    xtp.discharge_location,
+                    xtp.external_package,
+                    xtp.external_package_unit,
+                    xtp.external_reference,
+                    xtp.factory,
+                    xtp.future_contract_month,
+                    xtp.future_index,
+                    xtp.fxrate,
+                    xtp.grade,
+                    xtp.incoterm,
+                    xtp.internal_package,
+                    xtp.internal_package_unit,
+                    xtp.internal_profit_center,
+                    xtp.is_internal_trade,
+                    xtp.is_provisional_pricing,
+                    xtp.load_location,
+                    xtp.location,
+                    xtp.long_contract,
+                    xtp.origin,
+                    xtp.package_type,
+                    xtp.paymentterm,
+                    xtp.percentage,
+                    xtp.period_end_date,
+                    xtp.period_start_date,
+                    xtp.price_type,
+                    xtp.profitcenter,
+                    xtp.provisional_fx_rate,
+                    xtp.provisional_price,
+                    xtp.provisional_price_currency,
+                    xtp.provisional_price_type,
+                    xtp.provisional_price_uom,
+                    xtp.quantity,
+                    xtp.quantity_periodicity,
+                    xtp.quantity_tolerance_type,
+                    xtp.quantity_uom,
+                    xtp.season,
+                    xtp.special_instructions,
+                    xtp.tolerance_value,
+                    xtp.total_trade_qty,
+                    xtp.trade_date_time,
+                    xtp.trade_id,
+                    xtp.trade_price,
+                    xtp.trade_price_currency,
+                    xtp.trade_price_uom,
+                    xtp.trade_settlement_currency,
+                    xtp.trade_transaction_type,
+                    xtp.trader_name,
+                    xtp.load_location_type,
+                    xtp.location_type,
+                    xtp.mode_of_transport,
+                    xtp.total_units,
+                    xtp.unload_location_type,
+                    xtp.weight_basis,
+                    xtp.delivery_terms_clause,
+                    xtp.payment_terms_clause,
+                    xtp.pricing_terms_clause,
+                    xtp.quantity_terms_clause,
+                    xtp.quotation_period_clause,
+                    xtp.quality_terms_clause,
+                    xtp.commodity_code,
+                    xtp.company_code,
+                    xtp.profitcenter_code,
+                    xtp.internal_profitcenter_code,
+                    xtp.counterparty_code,
+                    xtp.manual_trade_id,
+                    xtp.broker_reference,
+                    xtp.paper_trade,
+                    xtp.settlement_tolerance_percentage,
+                    xtp.trade_type
+                   FROM xceler_physicaltradeservice_physicaltrade xtp
+                  WHERE ((xtp.trade_type)::text = 'Paper'::text)) xep
+             LEFT JOIN ( SELECT xpp.uuid,
+                    xpp.created_by,
+                    xpp.created_timestamp,
+                    xpp.tenant_id,
+                    xpp.updated_by,
+                    xpp.updated_timestamp,
+                    xpp.broker,
+                    xpp.circle_string_seq,
+                    xpp.commodity,
+                    xpp.company,
+                    xpp.counterparty,
+                    xpp.crop_origin,
+                    xpp.delivery_date,
+                    xpp.delivery_end_date,
+                    xpp.delivery_start_date,
+                    xpp.grade,
+                    xpp.incoterm,
+                    xpp.location,
+                    xpp.obligation_date,
+                    xpp.plan_id,
+                    xpp.plan_uuid,
+                    xpp.planned_obligation_id,
+                    xpp.planned_quantity,
+                    xpp.price_type,
+                    xpp.profitcenter,
+                    xpp.quantityuom,
+                    xpp.reference_number,
+                    xpp.trade_date_time,
+                    xpp.trade_id,
+                    xpp.trade_obligation_id,
+                    xpp.trade_obligation_uuid,
+                    xpp.trade_price,
+                    xpp.trade_price_currency,
+                    xpp.trade_price_uom,
+                    xpp.trade_quantity,
+                    xpp.trade_transaction_type,
+                    xpp.trade_type,
+                    xpp.trade_uuid,
+                    xpp.no_of_units,
+                    xpp.remarks,
+                    xpp.brand,
+                    xpp.season,
+                    xpp.load_location,
+                    xpp.unload_location,
+                    xpp.payment_term,
+                    xpp.trader,
+                    xpp.fx_rate,
+                    xpp.provisional_fx_rate,
+                    xpp.provisional_price_percentage,
+                    xpp.provisional_price_type,
+                    xpp.provisional_price,
+                    xpp.tradesettlementcurrency,
+                    xpp.trade_settlement_currency,
+                    xpp.premiun_cost,
+                    xpp.discount_cost,
+                    xpp.total_trade_qty,
+                    xpp.broker_reference_number,
+                    xpp.provisional_price_uom,
+                    xpp.provisional_price_currency
+                   FROM xceler_tradeplanningservice_plannedtradeobligation xpp) xppr ON ((((xppr.tenant_id)::text = (xep.tenant_id)::text) AND ((xppr.trade_id)::text = (xep.trade_id)::text))))
+             LEFT JOIN ( SELECT xaa.uuid,
+                    xaa.created_by,
+                    xaa.created_timestamp,
+                    xaa.tenant_id,
+                    xaa.updated_by,
+                    xaa.updated_timestamp,
+                    xaa.actualization_id,
+                    xaa.actualized_on,
+                    xaa.planned_obligation_id,
+                    xaa.trade_id,
+                    xaa.actualized_quantity_id,
+                    xaa.brand,
+                    xaa.commodity,
+                    xaa.external_package,
+                    xaa.external_package_unit,
+                    xaa.grade,
+                    xaa.internal_package,
+                    xaa.internal_package_unit,
+                    xaa.load_quantity,
+                    xaa.origin,
+                    xaa.package_type,
+                    xaa.planned_obligation_type,
+                    xaa.planned_quantity,
+                    xaa.quantity_uom,
+                    xaa.unload_quantity,
+                    xaa.purpose,
+                    xaa.planned_internal_package_unit,
+                    xaa.planned_external_package_unit,
+                    xaa.split_sequence_number,
+                    xaa.claimed_quantity
+                   FROM xceler_actualizationservice_actualizedquantity xaa) act ON ((((act.tenant_id)::text = (xep.tenant_id)::text) AND ((act.planned_obligation_id)::text = (xppr.planned_obligation_id)::text))))
+             LEFT JOIN ( SELECT xcp.uuid,
+                    xcp.created_by,
+                    xcp.created_timestamp,
+                    xcp.end_date,
+                    xcp.start_date,
+                    xcp.tenant_id,
+                    xcp.updated_by,
+                    xcp.updated_timestamp,
+                    xcp.description,
+                    xcp.is_tradeable,
+                    xcp.name,
+                    xcp.parent,
+                    xcp.reporting_pnl_currency,
+                    xcp.reporting_pnl_uom,
+                    xcp.status,
+                    xcp.time_zone,
+                    xcp.code,
+                    xcp.commodity,
+                    xcp.profitcenter_external_ref,
+                    xcp.username,
+                    xcp.valid_from,
+                    xcp.valid_to
+                   FROM xceler_configservice_profitcenter xcp) xcpd ON ((((xcpd.tenant_id)::text = (xep.tenant_id)::text) AND ((xcpd.name)::text = (xep.profitcenter)::text))))) xpet
+UNION
+ SELECT xppr.uuid,
+    xppr.tenant_id AS tenantid,
+    xppr.company,
+    xppr.profitcenter,
+    xcpd.description AS profitcenterdesc,
+    xppr.trade_date_time AS tradedate,
+    xppr.trade_id AS tradeid,
+    xppr.external_reference AS externalreference,
+        CASE
+            WHEN (xppr.trade_transaction_type = 1) THEN 'SALES'::text
+            ELSE 'PURCHASE'::text
+        END AS tradetransactiontype,
+    'IDT'::character varying AS tradetype,
+    xppr.commodity,
+    'Physical'::text AS instrumenttype,
+    xppr.quantity,
+    xppr.quantity AS sellquantity,
+    xppr.quantity AS buyquantity,
+    xppr.counterparty,
+    to_char(xppr.delivery_end_date, 'MMYYYY'::text) AS shipmentmonthformat,
+    xppr.delivery_end_date AS shipmentmonth,
+    xppr.quantity_uom AS quantityuom,
+    xppr.incoterm,
+        CASE
+            WHEN (xppr.trade_transaction_type = 0) THEN xppr.load_location
+            ELSE xppr.discharge_location
+        END AS port,
+    xppr.trade_price AS tradeprice,
+    xppr.trade_price AS fobvalue,
+    xppr.trade_price_currency AS currency,
+    'Confirmed'::text AS buysellref,
+    ''::character varying AS broker,
+    xppr.broker AS pricetype,
+    xppr.price_type AS pricestatus,
+    xppr.price_type AS obligationstatus
+   FROM (( SELECT xtp.uuid,
+            xtp.created_by,
+            xtp.created_timestamp,
+            xtp.tenant_id,
+            xtp.updated_by,
+            xtp.updated_timestamp,
+            xtp.brand,
+            xtp.broker,
+            xtp.comments,
+            xtp.commodity,
+            xtp.company,
+            xtp.contract_confirmation,
+            xtp.counterparty,
+            xtp.delivery_end_date,
+            xtp.delivery_start_date,
+            xtp.discharge_location,
+            xtp.external_package,
+            xtp.external_package_unit,
+            xtp.external_reference,
+            xtp.factory,
+            xtp.future_contract_month,
+            xtp.future_index,
+            xtp.fxrate,
+            xtp.grade,
+            xtp.incoterm,
+            xtp.internal_package,
+            xtp.internal_package_unit,
+            xtp.internal_profit_center,
+            xtp.is_internal_trade,
+            xtp.is_provisional_pricing,
+            xtp.load_location,
+            xtp.location,
+            xtp.long_contract,
+            xtp.origin,
+            xtp.package_type,
+            xtp.paymentterm,
+            xtp.percentage,
+            xtp.period_end_date,
+            xtp.period_start_date,
+            xtp.price_type,
+            xtp.profitcenter,
+            xtp.provisional_fx_rate,
+            xtp.provisional_price,
+            xtp.provisional_price_currency,
+            xtp.provisional_price_type,
+            xtp.provisional_price_uom,
+            xtp.quantity,
+            xtp.quantity_periodicity,
+            xtp.quantity_tolerance_type,
+            xtp.quantity_uom,
+            xtp.season,
+            xtp.special_instructions,
+            xtp.tolerance_value,
+            xtp.total_trade_qty,
+            xtp.trade_date_time,
+            xtp.trade_id,
+            xtp.trade_price,
+            xtp.trade_price_currency,
+            xtp.trade_price_uom,
+            xtp.trade_settlement_currency,
+            xtp.trade_transaction_type,
+            xtp.trader_name,
+            xtp.load_location_type,
+            xtp.location_type,
+            xtp.mode_of_transport,
+            xtp.total_units,
+            xtp.unload_location_type,
+            xtp.weight_basis,
+            xtp.delivery_terms_clause,
+            xtp.payment_terms_clause,
+            xtp.pricing_terms_clause,
+            xtp.quantity_terms_clause,
+            xtp.quotation_period_clause,
+            xtp.quality_terms_clause,
+            xtp.commodity_code,
+            xtp.company_code,
+            xtp.profitcenter_code,
+            xtp.internal_profitcenter_code,
+            xtp.counterparty_code,
+            xtp.manual_trade_id,
+            xtp.broker_reference,
+            xtp.paper_trade,
+            xtp.settlement_tolerance_percentage,
+            xtp.trade_type
+           FROM xceler_physicaltradeservice_physicaltrade xtp
+          WHERE ((xtp.trade_type)::text = 'InterProfitCenter'::text)) xppr
+     LEFT JOIN ( SELECT xcp.uuid,
+            xcp.created_by,
+            xcp.created_timestamp,
+            xcp.end_date,
+            xcp.start_date,
+            xcp.tenant_id,
+            xcp.updated_by,
+            xcp.updated_timestamp,
+            xcp.description,
+            xcp.is_tradeable,
+            xcp.name,
+            xcp.parent,
+            xcp.reporting_pnl_currency,
+            xcp.reporting_pnl_uom,
+            xcp.status,
+            xcp.time_zone,
+            xcp.code,
+            xcp.commodity,
+            xcp.profitcenter_external_ref,
+            xcp.username,
+            xcp.valid_from,
+            xcp.valid_to
+           FROM xceler_configservice_profitcenter xcp) xcpd ON ((((xcpd.tenant_id)::text = (xppr.tenant_id)::text) AND ((xcpd.name)::text = (xppr.profitcenter)::text))))
+UNION
+ SELECT xpet.uuid,
+    xpet.tenantid,
+    xpet.company,
+    xpet.profitcenter,
+    xpet.profitcenterdesc,
+    xpet.tradedate,
+    xpet.tradeid,
+    xpet.externalreference,
+    xpet.tradetransactiontype,
+    xpet.tradetype,
+    xpet.commodity,
+    'Physical'::text AS instrumenttype,
+    xpet.quantity,
+    xpet.sellquantity,
+    xpet.buyquantity,
+    xpet.counterparty,
+    xpet.shipmentmonthformat,
+    xpet.shipmentmonth,
+    xpet.quantityuom,
+    xpet.incoterm,
+    xpet.port,
+    xpet.tradeprice,
+    xpet.fobvalue,
+    xpet.currency,
+    ''::text AS buysellref,
+    xpet.broker,
+    xpet.pricetype,
+        CASE
+            WHEN (xpet.pricestatus IS NULL) THEN 'NOT PRICED'::character varying
+            ELSE xpet.pricestatus
+        END AS pricestatus,
+        CASE
+            WHEN (xpet.obligationstatus IS NULL) THEN 'Confirmed'::text
+            ELSE 'Fulfilled'::text
+        END AS obligationstatus
+   FROM ( SELECT xep.uuid,
+            xep.tenant_id AS tenantid,
+            xep.company,
+            xep.profitcenter,
+            xcpd.description AS profitcenterdesc,
+            xep.trade_date_time AS tradedate,
+            xep.trade_id AS tradeid,
+            xep.external_reference AS externalreference,
+                CASE
+                    WHEN (xep.trade_transaction_type = 1) THEN 'SALES'::text
+                    ELSE 'PURCHASE'::text
+                END AS tradetransactiontype,
+            xep.trade_type AS tradetype,
+            xep.commodity,
+            'Physical'::text AS instrumenttype,
+                CASE
+                    WHEN (act.actualization_id IS NULL) THEN xppr.planned_quantity
+                    ELSE
+                    CASE
+                        WHEN (xep.trade_transaction_type = 1) THEN act.unload_quantity
+                        ELSE act.load_quantity
+                    END
+                END AS quantity,
+                CASE
+                    WHEN (xep.trade_transaction_type = 1) THEN xppr.planned_quantity
+                    ELSE (0.0)::double precision
+                END AS sellquantity,
+                CASE
+                    WHEN (xep.trade_transaction_type = 0) THEN xppr.planned_quantity
+                    ELSE (0.0)::double precision
+                END AS buyquantity,
+            xep.counterparty,
+            to_char(xep.delivery_end_date, 'MMYYYY'::text) AS shipmentmonthformat,
+            xep.delivery_end_date AS shipmentmonth,
+            xep.quantity_uom AS quantityuom,
+            xep.incoterm,
+                CASE
+                    WHEN (xep.trade_transaction_type = 0) THEN xep.load_location
+                    ELSE xep.discharge_location
+                END AS port,
+            xep.trade_price AS tradeprice,
+            xep.trade_price AS fobvalue,
+            xep.trade_price_currency AS currency,
+            ''::text AS buysellref,
+            xep.broker,
+            xep.price_type AS pricetype,
+                CASE
+                    WHEN ((xep.price_type)::text = 'Fixed'::text) THEN 'PRICED'::character varying
+                    ELSE
+                    CASE
+                        WHEN ((xep.price_type)::text &lt;&gt; 'Fixed'::text) THEN ( SELECT xtps.obligation_state
+                           FROM xceler_tradeplanningservice_plannedtradeobligationstate xtps
+                          WHERE ((xtps.uuid = xppr.uuid) AND (xtps.status = true) AND ((xtps.obligation_state)::text = 'PRICED'::text)))
+                        ELSE NULL::character varying
+                    END
+                END AS pricestatus,
+            ( SELECT xtps.obligation_state
+                   FROM xceler_tradeplanningservice_plannedtradeobligationstate xtps
+                  WHERE ((xtps.uuid = xppr.uuid) AND (xtps.status = true) AND ((xtps.obligation_state)::text = 'SETTLED'::text))) AS obligationstatus
+           FROM (((( SELECT xtp.uuid,
+                    xtp.created_by,
+                    xtp.created_timestamp,
+                    xtp.tenant_id,
+                    xtp.updated_by,
+                    xtp.updated_timestamp,
+                    xtp.brand,
+                    xtp.broker,
+                    xtp.comments,
+                    xtp.commodity,
+                    xtp.company,
+                    xtp.contract_confirmation,
+                    xtp.counterparty,
+                    xtp.delivery_end_date,
+                    xtp.delivery_start_date,
+                    xtp.discharge_location,
+                    xtp.external_package,
+                    xtp.external_package_unit,
+                    xtp.external_reference,
+                    xtp.factory,
+                    xtp.future_contract_month,
+                    xtp.future_index,
+                    xtp.fxrate,
+                    xtp.grade,
+                    xtp.incoterm,
+                    xtp.internal_package,
+                    xtp.internal_package_unit,
+                    xtp.internal_profit_center,
+                    xtp.is_internal_trade,
+                    xtp.is_provisional_pricing,
+                    xtp.load_location,
+                    xtp.location,
+                    xtp.long_contract,
+                    xtp.origin,
+                    xtp.package_type,
+                    xtp.paymentterm,
+                    xtp.percentage,
+                    xtp.period_end_date,
+                    xtp.period_start_date,
+                    xtp.price_type,
+                    xtp.profitcenter,
+                    xtp.provisional_fx_rate,
+                    xtp.provisional_price,
+                    xtp.provisional_price_currency,
+                    xtp.provisional_price_type,
+                    xtp.provisional_price_uom,
+                    xtp.quantity,
+                    xtp.quantity_periodicity,
+                    xtp.quantity_tolerance_type,
+                    xtp.quantity_uom,
+                    xtp.season,
+                    xtp.special_instructions,
+                    xtp.tolerance_value,
+                    xtp.total_trade_qty,
+                    xtp.trade_date_time,
+                    xtp.trade_id,
+                    xtp.trade_price,
+                    xtp.trade_price_currency,
+                    xtp.trade_price_uom,
+                    xtp.trade_settlement_currency,
+                    xtp.trade_transaction_type,
+                    xtp.trader_name,
+                    xtp.load_location_type,
+                    xtp.location_type,
+                    xtp.mode_of_transport,
+                    xtp.total_units,
+                    xtp.unload_location_type,
+                    xtp.weight_basis,
+                    xtp.delivery_terms_clause,
+                    xtp.payment_terms_clause,
+                    xtp.pricing_terms_clause,
+                    xtp.quantity_terms_clause,
+                    xtp.quotation_period_clause,
+                    xtp.quality_terms_clause,
+                    xtp.commodity_code,
+                    xtp.company_code,
+                    xtp.profitcenter_code,
+                    xtp.internal_profitcenter_code,
+                    xtp.counterparty_code,
+                    xtp.manual_trade_id,
+                    xtp.broker_reference,
+                    xtp.paper_trade,
+                    xtp.settlement_tolerance_percentage,
+                    xtp.trade_type
+                   FROM xceler_physicaltradeservice_physicaltrade xtp
+                  WHERE ((xtp.trade_type)::text = 'Physical'::text)) xep
+             LEFT JOIN ( SELECT xpp.uuid,
+                    xpp.created_by,
+                    xpp.created_timestamp,
+                    xpp.tenant_id,
+                    xpp.updated_by,
+                    xpp.updated_timestamp,
+                    xpp.broker,
+                    xpp.circle_string_seq,
+                    xpp.commodity,
+                    xpp.company,
+                    xpp.counterparty,
+                    xpp.crop_origin,
+                    xpp.delivery_date,
+                    xpp.delivery_end_date,
+                    xpp.delivery_start_date,
+                    xpp.grade,
+                    xpp.incoterm,
+                    xpp.location,
+                    xpp.obligation_date,
+                    xpp.plan_id,
+                    xpp.plan_uuid,
+                    xpp.planned_obligation_id,
+                    xpp.planned_quantity,
+                    xpp.price_type,
+                    xpp.profitcenter,
+                    xpp.quantityuom,
+                    xpp.reference_number,
+                    xpp.trade_date_time,
+                    xpp.trade_id,
+                    xpp.trade_obligation_id,
+                    xpp.trade_obligation_uuid,
+                    xpp.trade_price,
+                    xpp.trade_price_currency,
+                    xpp.trade_price_uom,
+                    xpp.trade_quantity,
+                    xpp.trade_transaction_type,
+                    xpp.trade_type,
+                    xpp.trade_uuid,
+                    xpp.no_of_units,
+                    xpp.remarks,
+                    xpp.brand,
+                    xpp.season,
+                    xpp.load_location,
+                    xpp.unload_location,
+                    xpp.payment_term,
+                    xpp.trader,
+                    xpp.fx_rate,
+                    xpp.provisional_fx_rate,
+                    xpp.provisional_price_percentage,
+                    xpp.provisional_price_type,
+                    xpp.provisional_price,
+                    xpp.tradesettlementcurrency,
+                    xpp.trade_settlement_currency,
+                    xpp.premiun_cost,
+                    xpp.discount_cost,
+                    xpp.total_trade_qty,
+                    xpp.broker_reference_number,
+                    xpp.provisional_price_uom,
+                    xpp.provisional_price_currency
+                   FROM xceler_tradeplanningservice_plannedtradeobligation xpp) xppr ON ((((xppr.tenant_id)::text = (xep.tenant_id)::text) AND ((xppr.trade_id)::text = (xep.trade_id)::text))))
+             LEFT JOIN ( SELECT xaa.uuid,
+                    xaa.created_by,
+                    xaa.created_timestamp,
+                    xaa.tenant_id,
+                    xaa.updated_by,
+                    xaa.updated_timestamp,
+                    xaa.actualization_id,
+                    xaa.actualized_on,
+                    xaa.planned_obligation_id,
+                    xaa.trade_id,
+                    xaa.actualized_quantity_id,
+                    xaa.brand,
+                    xaa.commodity,
+                    xaa.external_package,
+                    xaa.external_package_unit,
+                    xaa.grade,
+                    xaa.internal_package,
+                    xaa.internal_package_unit,
+                    xaa.load_quantity,
+                    xaa.origin,
+                    xaa.package_type,
+                    xaa.planned_obligation_type,
+                    xaa.planned_quantity,
+                    xaa.quantity_uom,
+                    xaa.unload_quantity,
+                    xaa.purpose,
+                    xaa.planned_internal_package_unit,
+                    xaa.planned_external_package_unit,
+                    xaa.split_sequence_number,
+                    xaa.claimed_quantity
+                   FROM xceler_actualizationservice_actualizedquantity xaa) act ON ((((act.tenant_id)::text = (xep.tenant_id)::text) AND ((act.planned_obligation_id)::text = (xppr.planned_obligation_id)::text))))
+             LEFT JOIN ( SELECT xcp.uuid,
+                    xcp.created_by,
+                    xcp.created_timestamp,
+                    xcp.end_date,
+                    xcp.start_date,
+                    xcp.tenant_id,
+                    xcp.updated_by,
+                    xcp.updated_timestamp,
+                    xcp.description,
+                    xcp.is_tradeable,
+                    xcp.name,
+                    xcp.parent,
+                    xcp.reporting_pnl_currency,
+                    xcp.reporting_pnl_uom,
+                    xcp.status,
+                    xcp.time_zone,
+                    xcp.code,
+                    xcp.commodity,
+                    xcp.profitcenter_external_ref,
+                    xcp.username,
+                    xcp.valid_from,
+                    xcp.valid_to
+                   FROM xceler_configservice_profitcenter xcp) xcpd ON ((((xcpd.tenant_id)::text = (xep.tenant_id)::text) AND ((xcpd.name)::text = (xep.profitcenter)::text))))) xpet
+UNION
+ SELECT xff.uuid,
+    xff.tenant_id AS tenantid,
+    xff.company,
+    xff.profitcenter,
+    xcpd.description AS profitcenterdesc,
+    xff.trade_date AS tradedate,
+    xff.trade_id AS tradeid,
+    ''::character varying AS externalreference,
+        CASE
+            WHEN (xff.trade_transaction_type = 1) THEN 'SALES'::text
+            ELSE 'PURCHASE'::text
+        END AS tradetransactiontype,
+    'MARKETHEDGE'::character varying AS tradetype,
+    xff.commodity,
+    'Futures'::text AS instrumenttype,
+    xff.lot AS quantity,
+        CASE
+            WHEN (xff.trade_transaction_type = 1) THEN xff.lot
+            ELSE (0.0)::double precision
+        END AS sellquantity,
+        CASE
+            WHEN (xff.trade_transaction_type = 0) THEN xff.lot
+            ELSE (0.0)::double precision
+        END AS buyquantity,
+    xff.exchange AS counterparty,
+    to_char(xff.expiry_date, 'MMYYYY'::text) AS shipmentmonthformat,
+    xff.expiry_date AS shipmentmonth,
+    xff.uom AS quantityuom,
+    'FOB'::character varying AS incoterm,
+    '-'::character varying AS port,
+    xff.trade_price AS tradeprice,
+    xff.trade_price AS fobvalue,
+    xff.currency,
+    'Fulfilled'::text AS buysellref,
+    ''::character varying AS broker,
+    xff.clearing_broker AS pricetype,
+    ''::character varying AS pricestatus,
+    ''::text AS obligationstatus
+   FROM (xceler_futuretradeservice_futuretrade xff
+     LEFT JOIN ( SELECT xcp.uuid,
+            xcp.created_by,
+            xcp.created_timestamp,
+            xcp.end_date,
+            xcp.start_date,
+            xcp.tenant_id,
+            xcp.updated_by,
+            xcp.updated_timestamp,
+            xcp.description,
+            xcp.is_tradeable,
+            xcp.name,
+            xcp.parent,
+            xcp.reporting_pnl_currency,
+            xcp.reporting_pnl_uom,
+            xcp.status,
+            xcp.time_zone,
+            xcp.code,
+            xcp.commodity,
+            xcp.profitcenter_external_ref,
+            xcp.username,
+            xcp.valid_from,
+            xcp.valid_to
+           FROM xceler_configservice_profitcenter xcp) xcpd ON ((((xcpd.tenant_id)::text = (xff.tenant_id)::text) AND ((xcpd.name)::text = (xff.profitcenter)::text))));</createView>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-39">
+        <createView fullDefinition="false" viewName="xceler_vesselplanning_shippingschedule">SELECT seafreightinfo.uuid,
+    seafreightinfo.bookingid,
+    seafreightinfo.vesselname,
+    seafreightinfo.tenantid,
+    seafreightinfo.freightcapacity,
+    seafreightinfo.planid,
+    seafreightinfo.pic,
+    seafreightinfo.stowage,
+    seafreightinfo.loadport,
+    seafreightinfo.unloadport,
+    seafreightinfo.laycandate,
+    seafreightinfo.etato,
+    seafreightinfo.sailingdate,
+    info1.buyobligationtradeid AS purchasecontractid,
+    info1.buyobligationcommodity AS commodity,
+    info1.sellobligationcounterparty AS buyer,
+    info1.buyobligationtradeprice AS buyprice,
+    info1.buyobligationplannedquantity AS buyquantity,
+    info1.buyobligationquantityuom AS buyquantityuom,
+    info1.buyobligationtradedate AS buydate,
+    info1.sellobligationtradeid AS salecontractid,
+    info1.buyobligationcounterparty AS supplier,
+    info1.sellobligationtradeprice AS sellprice,
+    info1.sellobligationplannedquantity AS sellquantity,
+    info1.buyobligationquantityuom AS sellquantityuom,
+    info1.sellobligationtradedate AS selldate,
+    info1.buyobligationbroker AS buybroker,
+    info1.sellobligationbroker AS sellbroker,
+    info1.buyblnumber,
+    info1.sellblnumber,
+    info1.buyloadquantity,
+    info1.sellloadquantity
+   FROM (( SELECT seainfo.uuid,
+            seainfo.bookingid,
+            seainfo.vesselname,
+            seainfo.tenantid,
+            seainfo.freightcapacity,
+            seainfo.planid,
+            bookingmanagement.person_in_charge AS pic,
+            bookingmanagement.stowage_plan AS stowage,
+            bookingmanagement.vessel_load_port AS loadport,
+            bookingmanagement.vessel_unload_port AS unloadport,
+            sealoaddetails.laycan_date AS laycandate,
+            seaunloaddetails.eta_to AS etato,
+            sealoaddetails.sailing_date AS sailingdate
+           FROM (((( SELECT uuid_generate_v4() AS uuid,
+                    seafreight.vessel_id AS bookingid,
+                    seafreight.vessel_name AS vesselname,
+                    seafreight.tenant_id AS tenantid,
+                        CASE
+                            WHEN (seafreight.freight_capacity IS NULL) THEN (0.0)::double precision
+                            ELSE seafreight.freight_capacity
+                        END AS freightcapacity,
+                    seafreight.plan_id AS planid
+                   FROM xceler_transportallocationservice_seafreightdetails seafreight
+                  WHERE (seafreight.plan_id IS NOT NULL)) seainfo
+             LEFT JOIN ( SELECT xtb.uuid,
+                    xtb.created_by,
+                    xtb.created_timestamp,
+                    xtb.tenant_id,
+                    xtb.updated_by,
+                    xtb.updated_timestamp,
+                    xtb.booking_date,
+                    xtb.booking_number,
+                    xtb.cargo_type,
+                    xtb.commodity,
+                    xtb.connected_vessel_load_port,
+                    xtb.connected_vessel_name,
+                    xtb.connected_vessel_unload_port,
+                    xtb.connected_vessel_eta,
+                    xtb.container_type,
+                    xtb.currency,
+                    xtb.destination_country,
+                    xtb.freight_forwarder,
+                    xtb.freight_type,
+                    xtb.hs_code,
+                    xtb.incoterm,
+                    xtb.movement_type,
+                    xtb.no_of_containers,
+                    xtb.origin_country,
+                    xtb.port_cut_off_date,
+                    xtb.preferred_depo,
+                    xtb.shipping_mode,
+                    xtb.si_cut_off_date,
+                    xtb.vessel_load_port,
+                    xtb.vessel_name,
+                    xtb.vessel_unload_port,
+                    xtb.vessel_eta,
+                    xtb.vessel_etd,
+                    xtb.stowageplan,
+                    xtb.charterparty,
+                    xtb.laycanfrom,
+                    xtb.laycanto,
+                    xtb.loadport,
+                    xtb.unloadport,
+                    xtb.charter_party,
+                    xtb.laycan_from,
+                    xtb.laycan_to,
+                    xtb.load_port,
+                    xtb.stowage_plan,
+                    xtb.unload_port,
+                    xtb.person_in_charge,
+                    xtb.vessel_capacity
+                   FROM xceler_transportallocationservice_bookingmanagement xtb) bookingmanagement ON ((((seainfo.bookingid)::text = (bookingmanagement.booking_number)::text) AND ((seainfo.tenantid)::text = (bookingmanagement.tenant_id)::text))))
+             LEFT JOIN LATERAL ( SELECT seaload.uuid,
+                    seaload.created_by,
+                    seaload.created_timestamp,
+                    seaload.tenant_id,
+                    seaload.updated_by,
+                    seaload.updated_timestamp,
+                    seaload.laycan_date,
+                    seaload.load_port,
+                    seaload.load_rate,
+                    seaload.notes,
+                    seaload.sailing_date,
+                    seaload.vessel_id,
+                    seaload.barge,
+                    seaload.tugboat,
+                    seaload.laycanfrom,
+                    seaload.laycanto,
+                    seaload.laycan_from,
+                    seaload.laycan_to
+                   FROM xceler_transportallocationservice_seafreightloaddetails seaload
+                  WHERE (((seaload.tenant_id)::text = (seainfo.tenantid)::text) AND ((seaload.vessel_id)::text = (seainfo.bookingid)::text))
+                  ORDER BY seaload.laycan_date DESC
+                 OFFSET 0
+                 LIMIT 1) sealoaddetails ON ((((seainfo.tenantid)::text = (sealoaddetails.tenant_id)::text) AND ((seainfo.bookingid)::text = (sealoaddetails.vessel_id)::text))))
+             LEFT JOIN LATERAL ( SELECT seaunload.uuid,
+                    seaunload.created_by,
+                    seaunload.created_timestamp,
+                    seaunload.tenant_id,
+                    seaunload.updated_by,
+                    seaunload.updated_timestamp,
+                    seaunload.discharge_port,
+                    seaunload.discharge_rate,
+                    seaunload.eta_from,
+                    seaunload.eta_to,
+                    seaunload.notes,
+                    seaunload.vessel_id
+                   FROM xceler_transportallocationservice_seafreightunloaddetails seaunload
+                  WHERE (((seaunload.tenant_id)::text = (seainfo.tenantid)::text) AND ((seaunload.vessel_id)::text = (seainfo.bookingid)::text))
+                  ORDER BY seaunload.eta_to DESC
+                 OFFSET 0
+                 LIMIT 1) seaunloaddetails ON ((((seainfo.tenantid)::text = (seaunloaddetails.tenant_id)::text) AND ((seainfo.bookingid)::text = (seaunloaddetails.vessel_id)::text))))) seafreightinfo
+     LEFT JOIN ( SELECT traadelink.uuid,
+            traadelink.created_by,
+            traadelink.created_timestamp,
+            traadelink.tenant_id,
+            traadelink.updated_by,
+            traadelink.updated_timestamp,
+            traadelink.planning_id,
+            traadelink.planned_obligation_id,
+            traadelink.linked_with,
+            traadelink.match_quantity,
+            buyobligation.buyoblligationid,
+            buyobligation.buyobligationtradeid,
+            buyobligation.buyobligationcommodity,
+            buyobligation.buyobligationbroker,
+            buyobligation.buyobligationcounterparty,
+            buyobligation.buyobligationtradeprice,
+            buyobligation.buyobligationplannedquantity,
+            buyobligation.buyobligationquantityuom,
+            buyobligation.buyobligationtradedate,
+            buyobligation.buyobligationtenantid,
+            buyactualization.bactualtenantid,
+            buyactualization.bactualplannedobligationid,
+            buyactualization.buyloadquantity,
+            buybl.bbltenantid,
+            buybl.buyblnumber,
+            buybl.bblplannedobligationid,
+            sellobligation.selloblligationid,
+            sellobligation.sellobligationtradeid,
+            sellobligation.sellobligationbroker,
+            sellobligation.sellobligationcommodity,
+            sellobligation.sellobligationcounterparty,
+            sellobligation.sellobligationtradeprice,
+            sellobligation.sellobligationplannedquantity,
+            sellobligation.sellobligationquantityuom,
+            sellobligation.sellobligationtradedate,
+            sellobligation.sellobligationtenantid,
+            sellactualization.sactualtenantid,
+            sellactualization.sactualplannedobligationid,
+            sellactualization.sellloadquantity,
+            sellbl.sbltenantid,
+            sellbl.sellblnumber,
+            sellbl.sblplannedobligationid
+           FROM ((((((xceler_tradeplanningservice_tradelink traadelink
+             LEFT JOIN ( SELECT xtp_buy.planned_obligation_id AS buyoblligationid,
+                    xtp_buy.trade_id AS buyobligationtradeid,
+                    xtp_buy.commodity AS buyobligationcommodity,
+                    xtp_buy.broker AS buyobligationbroker,
+                    xtp_buy.counterparty AS buyobligationcounterparty,
+                    xtp_buy.trade_price AS buyobligationtradeprice,
+                    xtp_buy.planned_quantity AS buyobligationplannedquantity,
+                    xtp_buy.quantityuom AS buyobligationquantityuom,
+                    xtp_buy.trade_date_time AS buyobligationtradedate,
+                    xtp_buy.tenant_id AS buyobligationtenantid
+                   FROM xceler_tradeplanningservice_plannedtradeobligation xtp_buy) buyobligation ON ((((buyobligation.buyoblligationid)::text = (traadelink.planned_obligation_id)::text) AND ((buyobligation.buyobligationtenantid)::text = (traadelink.tenant_id)::text))))
+             LEFT JOIN ( SELECT bactual.tenant_id AS bactualtenantid,
+                    bactual.planned_obligation_id AS bactualplannedobligationid,
+                        CASE
+                            WHEN (bactual.load_quantity IS NULL) THEN (0.0)::double precision
+                            ELSE bactual.load_quantity
+                        END AS buyloadquantity
+                   FROM xceler_actualizationservice_actualizedquantity bactual) buyactualization ON ((((buyactualization.bactualtenantid)::text = (traadelink.tenant_id)::text) AND ((buyactualization.bactualplannedobligationid)::text = (traadelink.planned_obligation_id)::text))))
+             LEFT JOIN ( SELECT bbl.tenant_id AS bbltenantid,
+                    bbl.bl_number AS buyblnumber,
+                    bbl.planned_obligation_id AS bblplannedobligationid
+                   FROM xceler_actualizationservice_billoflanding bbl) buybl ON ((((buybl.bbltenantid)::text = (traadelink.tenant_id)::text) AND ((buybl.bblplannedobligationid)::text = (traadelink.planned_obligation_id)::text))))
+             LEFT JOIN ( SELECT xtp_sell.planned_obligation_id AS selloblligationid,
+                    xtp_sell.trade_id AS sellobligationtradeid,
+                    xtp_sell.broker AS sellobligationbroker,
+                    xtp_sell.commodity AS sellobligationcommodity,
+                    xtp_sell.counterparty AS sellobligationcounterparty,
+                    xtp_sell.trade_price AS sellobligationtradeprice,
+                    xtp_sell.planned_quantity AS sellobligationplannedquantity,
+                    xtp_sell.quantityuom AS sellobligationquantityuom,
+                    xtp_sell.trade_date_time AS sellobligationtradedate,
+                    xtp_sell.tenant_id AS sellobligationtenantid
+                   FROM xceler_tradeplanningservice_plannedtradeobligation xtp_sell) sellobligation ON ((((sellobligation.selloblligationid)::text = (traadelink.linked_with)::text) AND ((sellobligation.sellobligationtenantid)::text = (traadelink.tenant_id)::text))))
+             LEFT JOIN ( SELECT sactual.tenant_id AS sactualtenantid,
+                    sactual.planned_obligation_id AS sactualplannedobligationid,
+                        CASE
+                            WHEN (sactual.load_quantity IS NULL) THEN (0.0)::double precision
+                            ELSE sactual.load_quantity
+                        END AS sellloadquantity
+                   FROM xceler_actualizationservice_actualizedquantity sactual) sellactualization ON ((((sellactualization.sactualtenantid)::text = (traadelink.tenant_id)::text) AND ((sellactualization.sactualplannedobligationid)::text = (traadelink.linked_with)::text))))
+             LEFT JOIN ( SELECT sbl.tenant_id AS sbltenantid,
+                    sbl.bl_number AS sellblnumber,
+                    sbl.planned_obligation_id AS sblplannedobligationid
+                   FROM xceler_actualizationservice_billoflanding sbl) sellbl ON ((((sellbl.sbltenantid)::text = (traadelink.tenant_id)::text) AND ((sellbl.sblplannedobligationid)::text = (traadelink.linked_with)::text))))) info1 ON ((((info1.planning_id)::text = (seafreightinfo.planid)::text) AND ((info1.tenant_id)::text = (seafreightinfo.tenantid)::text))));</createView>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-40">
+        <createView fullDefinition="false" viewName="xceler_physicaltradeplanning_link">SELECT tpobbuy.uuid,
+    tpobbuy.tenant_id,
+    tpobbuy.plan_id,
+    tpobbuy.trade_id AS buy_trade_id,
+    tpobbuy.commodity,
+    tpobbuy.trader,
+    tpobbuy.trade_price AS buy_trade_price,
+    tpobbuy.trade_quantity AS buy_trade_quantity,
+    tpobbuy.quantityuom AS buy_quantity_uom,
+    tpobbuy.trade_date_time AS buy_trade_date,
+    tpobsell.trade_id AS sell_trade_id,
+    tpobbuy.counterparty AS buy_counter_party,
+    tpobsell.trade_price AS sell_trade_price,
+    tpobsell.trade_quantity AS sell_trade_quantity,
+    tpobsell.quantityuom AS sell_quantity_uom,
+    tpobsell.trade_date_time AS sell_trade_date,
+    tpobbuy.load_location AS buy_load_location,
+    tpobsell.unload_location AS sell_load_loaction,
+    tpobbuy.broker,
+    tpobbuy.profitcenter AS buy_profit_center,
+    tpobsell.profitcenter AS sell_profit_center,
+    LEAST(tpobbuy.planned_quantity, tpobsell.planned_quantity) AS match_quantity
+   FROM ((( SELECT tpob.uuid,
+            tpob.created_by,
+            tpob.created_timestamp,
+            tpob.tenant_id,
+            tpob.updated_by,
+            tpob.updated_timestamp,
+            tpob.broker,
+            tpob.circle_string_seq,
+            tpob.commodity,
+            tpob.company,
+            tpob.counterparty,
+            tpob.crop_origin,
+            tpob.delivery_date,
+            tpob.delivery_end_date,
+            tpob.delivery_start_date,
+            tpob.grade,
+            tpob.incoterm,
+            tpob.location,
+            tpob.obligation_date,
+            tpob.plan_id,
+            tpob.plan_uuid,
+            tpob.planned_obligation_id,
+            tpob.planned_quantity,
+            tpob.price_type,
+            tpob.profitcenter,
+            tpob.quantityuom,
+            tpob.reference_number,
+            tpob.trade_date_time,
+            tpob.trade_id,
+            tpob.trade_obligation_id,
+            tpob.trade_obligation_uuid,
+            tpob.trade_price,
+            tpob.trade_price_currency,
+            tpob.trade_price_uom,
+            tpob.trade_quantity,
+            tpob.trade_transaction_type,
+            tpob.trade_type,
+            tpob.trade_uuid,
+            tpob.no_of_units,
+            tpob.remarks,
+            tpob.brand,
+            tpob.season,
+            tpob.load_location,
+            tpob.unload_location,
+            tpob.payment_term,
+            tpob.trader,
+            tpob.fx_rate,
+            tpob.provisional_fx_rate,
+            tpob.provisional_price_percentage,
+            tpob.provisional_price_type,
+            tpob.provisional_price,
+            tpob.tradesettlementcurrency,
+            tpob.trade_settlement_currency,
+            tpob.premiun_cost,
+            tpob.discount_cost,
+            tpob.total_trade_qty
+           FROM xceler_tradeplanningservice_plannedtradeobligation tpob
+          WHERE (tpob.trade_transaction_type = 0)) tpobbuy
+     JOIN ( SELECT tpstl_1.uuid,
+            tpstl_1.created_by,
+            tpstl_1.created_timestamp,
+            tpstl_1.tenant_id,
+            tpstl_1.updated_by,
+            tpstl_1.updated_timestamp,
+            tpstl_1.planning_id,
+            tpstl_1.planned_obligation_id,
+            tpstl_1.linked_with,
+            tpstl_1.match_quantity
+           FROM xceler_tradeplanningservice_tradelink tpstl_1) tpstl ON (((tpobbuy.trade_obligation_id)::text = (tpstl.planned_obligation_id)::text)))
+     JOIN ( SELECT tpob.uuid,
+            tpob.created_by,
+            tpob.created_timestamp,
+            tpob.tenant_id,
+            tpob.updated_by,
+            tpob.updated_timestamp,
+            tpob.broker,
+            tpob.circle_string_seq,
+            tpob.commodity,
+            tpob.company,
+            tpob.counterparty,
+            tpob.crop_origin,
+            tpob.delivery_date,
+            tpob.delivery_end_date,
+            tpob.delivery_start_date,
+            tpob.grade,
+            tpob.incoterm,
+            tpob.location,
+            tpob.obligation_date,
+            tpob.plan_id,
+            tpob.plan_uuid,
+            tpob.planned_obligation_id,
+            tpob.planned_quantity,
+            tpob.price_type,
+            tpob.profitcenter,
+            tpob.quantityuom,
+            tpob.reference_number,
+            tpob.trade_date_time,
+            tpob.trade_id,
+            tpob.trade_obligation_id,
+            tpob.trade_obligation_uuid,
+            tpob.trade_price,
+            tpob.trade_price_currency,
+            tpob.trade_price_uom,
+            tpob.trade_quantity,
+            tpob.trade_transaction_type,
+            tpob.trade_type,
+            tpob.trade_uuid,
+            tpob.no_of_units,
+            tpob.remarks,
+            tpob.brand,
+            tpob.season,
+            tpob.load_location,
+            tpob.unload_location,
+            tpob.payment_term,
+            tpob.trader,
+            tpob.fx_rate,
+            tpob.provisional_fx_rate,
+            tpob.provisional_price_percentage,
+            tpob.provisional_price_type,
+            tpob.provisional_price,
+            tpob.tradesettlementcurrency,
+            tpob.trade_settlement_currency,
+            tpob.premiun_cost,
+            tpob.discount_cost,
+            tpob.total_trade_qty
+           FROM xceler_tradeplanningservice_plannedtradeobligation tpob
+          WHERE (tpob.trade_transaction_type = 1)) tpobsell ON (((tpobsell.trade_obligation_id)::text = (tpstl.linked_with)::text)));</createView>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-41">
+        <createView fullDefinition="false" viewName="xceler_report_mastertradesummary">SELECT xep.uuid,
+    xep.tenant_id AS tenantid,
+    xep.planned_obligation_id AS plannedobligationid,
+    xep.trade_date_time AS trade_date,
+    xep.trade_id,
+        CASE
+            WHEN (xep.trade_transaction_type = 0) THEN xep.counterparty
+            ELSE xep.company
+        END AS buyer,
+        CASE
+            WHEN (xep.trade_transaction_type = 1) THEN xep.company
+            ELSE xep.counterparty
+        END AS seller,
+    xep.commodity,
+    xep.incoterm,
+    xep.total_trade_qty AS quantity,
+    xep.quantityuom AS quantity_uom,
+    xep.planned_quantity AS un_planned_qty,
+        CASE
+            WHEN ((xep.trade_settlement_currency)::text = (xep.trade_price_currency)::text) THEN ''::character varying
+            ELSE xep.trade_settlement_currency
+        END AS settlement_price,
+        CASE
+            WHEN (xep.trade_transaction_type = 0) THEN xep.load_location
+            ELSE xep.unload_location
+        END AS port,
+    to_char(xep.delivery_end_date, 'MMYYYY'::text) AS shipment_month_format,
+    xep.delivery_end_date AS shipment_month,
+    xep.broker,
+    0 AS rollover,
+    'Direct'::text AS thru,
+    xep.location AS country,
+    pt.external_reference,
+    pt.broker_reference AS broke_reference,
+    xep.trade_price,
+    ctcf.freightsum AS freight,
+    ctcb.brokeragesum AS commission,
+    acost.acostsum AS additional_cost,
+    (((xep.trade_price - ctcb.brokeragesum) - ctcf.freightsum) - acost.acostsum) AS fob_price
+   FROM ((((( SELECT xtp.uuid,
+            xtp.created_by,
+            xtp.created_timestamp,
+            xtp.tenant_id,
+            xtp.updated_by,
+            xtp.updated_timestamp,
+            xtp.broker,
+            xtp.circle_string_seq,
+            xtp.commodity,
+            xtp.company,
+            xtp.counterparty,
+            xtp.crop_origin,
+            xtp.delivery_date,
+            xtp.delivery_end_date,
+            xtp.delivery_start_date,
+            xtp.grade,
+            xtp.incoterm,
+            xtp.location,
+            xtp.obligation_date,
+            xtp.plan_id,
+            xtp.plan_uuid,
+            xtp.planned_obligation_id,
+            xtp.planned_quantity,
+            xtp.price_type,
+            xtp.profitcenter,
+            xtp.quantityuom,
+            xtp.reference_number,
+            xtp.trade_date_time,
+            xtp.trade_id,
+            xtp.trade_obligation_id,
+            xtp.trade_obligation_uuid,
+            xtp.trade_price,
+            xtp.trade_price_currency,
+            xtp.trade_price_uom,
+            xtp.trade_quantity,
+            xtp.trade_transaction_type,
+            xtp.trade_type,
+            xtp.trade_uuid,
+            xtp.no_of_units,
+            xtp.remarks,
+            xtp.brand,
+            xtp.season,
+            xtp.load_location,
+            xtp.unload_location,
+            xtp.payment_term,
+            xtp.trader,
+            xtp.fx_rate,
+            xtp.provisional_fx_rate,
+            xtp.provisional_price_percentage,
+            xtp.provisional_price_type,
+            xtp.provisional_price,
+            xtp.tradesettlementcurrency,
+            xtp.trade_settlement_currency,
+            xtp.premiun_cost,
+            xtp.discount_cost,
+            xtp.total_trade_qty
+           FROM xceler_tradeplanningservice_plannedtradeobligation xtp
+          WHERE (xtp.plan_id IS NULL)) xep
+     LEFT JOIN ( SELECT xpp.uuid,
+            xpp.created_by,
+            xpp.created_timestamp,
+            xpp.tenant_id,
+            xpp.updated_by,
+            xpp.updated_timestamp,
+            xpp.brand,
+            xpp.broker,
+            xpp.comments,
+            xpp.commodity,
+            xpp.company,
+            xpp.contract_confirmation,
+            xpp.counterparty,
+            xpp.delivery_end_date,
+            xpp.delivery_start_date,
+            xpp.discharge_location,
+            xpp.external_package,
+            xpp.external_package_unit,
+            xpp.external_reference,
+            xpp.factory,
+            xpp.future_contract_month,
+            xpp.future_index,
+            xpp.fxrate,
+            xpp.grade,
+            xpp.incoterm,
+            xpp.internal_package,
+            xpp.internal_package_unit,
+            xpp.internal_profit_center,
+            xpp.is_internal_trade,
+            xpp.is_provisional_pricing,
+            xpp.load_location,
+            xpp.location,
+            xpp.long_contract,
+            xpp.origin,
+            xpp.package_type,
+            xpp.paymentterm,
+            xpp.percentage,
+            xpp.period_end_date,
+            xpp.period_start_date,
+            xpp.price_type,
+            xpp.profitcenter,
+            xpp.provisional_fx_rate,
+            xpp.provisional_price,
+            xpp.provisional_price_currency,
+            xpp.provisional_price_type,
+            xpp.provisional_price_uom,
+            xpp.quantity,
+            xpp.quantity_periodicity,
+            xpp.quantity_tolerance_type,
+            xpp.quantity_uom,
+            xpp.season,
+            xpp.special_instructions,
+            xpp.tolerance_value,
+            xpp.total_trade_qty,
+            xpp.trade_date_time,
+            xpp.trade_id,
+            xpp.trade_price,
+            xpp.trade_price_currency,
+            xpp.trade_price_uom,
+            xpp.trade_settlement_currency,
+            xpp.trade_transaction_type,
+            xpp.trader_name,
+            xpp.load_location_type,
+            xpp.location_type,
+            xpp.mode_of_transport,
+            xpp.total_units,
+            xpp.unload_location_type,
+            xpp.weight_basis,
+            xpp.delivery_terms_clause,
+            xpp.payment_terms_clause,
+            xpp.pricing_terms_clause,
+            xpp.quantity_terms_clause,
+            xpp.quotation_period_clause,
+            xpp.quality_terms_clause,
+            xpp.commodity_code,
+            xpp.company_code,
+            xpp.profitcenter_code,
+            xpp.internal_profitcenter_code,
+            xpp.counterparty_code,
+            xpp.manual_trade_id,
+            xpp.broker_reference,
+            xpp.paper_trade,
+            xpp.settlement_tolerance_percentage,
+            xpp.trade_type
+           FROM xceler_physicaltradeservice_physicaltrade xpp) pt ON ((((pt.tenant_id)::text = (xep.tenant_id)::text) AND ((pt.trade_id)::text = (xep.trade_id)::text))))
+     LEFT JOIN LATERAL ( SELECT
+                CASE
+                    WHEN (sum(xct.cost_value) IS NULL) THEN (0)::double precision
+                    ELSE sum(xct.cost_value)
+                END AS freightsum
+           FROM xceler_costservice_tradecost xct
+          WHERE (((xct.tenant_id)::text = (xep.tenant_id)::text) AND ((xct.link_to)::text = (xep.trade_id)::text) AND ((xct.name)::text = 'Freight'::text))) ctcf ON ((ctcf.freightsum IS NOT NULL)))
+     LEFT JOIN LATERAL ( SELECT
+                CASE
+                    WHEN (sum(xct.cost_value) IS NULL) THEN (0)::double precision
+                    ELSE sum(xct.cost_value)
+                END AS brokeragesum
+           FROM xceler_costservice_tradecost xct
+          WHERE (((xct.tenant_id)::text = (xep.tenant_id)::text) AND ((xct.link_to)::text = (xep.trade_id)::text) AND ((xct.name)::text = 'Brokerage'::text))) ctcb ON ((ctcb.brokeragesum IS NOT NULL)))
+     LEFT JOIN LATERAL ( SELECT
+                CASE
+                    WHEN (sum(xct.cost_value) IS NULL) THEN (0)::double precision
+                    ELSE sum(xct.cost_value)
+                END AS acostsum
+           FROM xceler_costservice_tradecost xct
+          WHERE (((xct.tenant_id)::text = (xep.tenant_id)::text) AND ((xct.link_to)::text = (xep.trade_id)::text) AND ((xct.name)::text &lt;&gt; ALL (ARRAY[('Brokerage'::character varying)::text, ('Freight'::character varying)::text])))) acost ON ((acost.acostsum IS NOT NULL)));</createView>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-42">
+        <createView fullDefinition="false" viewName="xceler_vesselplanning_plandetails">SELECT
+        CASE
+            WHEN (bpt.buyquantity IS NULL) THEN (0.0)::double precision
+            ELSE bpt.buyquantity
+        END AS buyquantity,
+        CASE
+            WHEN (spt.sellquantity IS NULL) THEN (0.0)::double precision
+            ELSE spt.sellquantity
+        END AS sellquantity,
+    bpt.buyquantityuom,
+    spt.sellquantiyuom,
+    sfd.vessel_name,
+    sfd.vessel_id,
+    xtp.uuid,
+    xtp.created_by,
+    xtp.created_timestamp,
+    xtp.tenant_id,
+    xtp.updated_by,
+    xtp.updated_timestamp,
+    xtp.comment,
+    xtp.match_quantity,
+    xtp.match_type,
+    xtp.planning_date,
+    xtp.planning_id,
+    xtp.settlement_currency,
+    xtp.settlement_price,
+    sld.load_port,
+    suld.discharge_port
+   FROM (((((xceler_tradeplanningservice_physicaltradeplan xtp
+     LEFT JOIN ( SELECT xtp_1.plan_id,
+            xtp_1.quantityuom AS buyquantityuom,
+            xtp_1.tenant_id,
+            sum(xtp_1.planned_quantity) AS buyquantity
+           FROM xceler_tradeplanningservice_plannedtradeobligation xtp_1
+          WHERE (xtp_1.trade_transaction_type = 0)
+          GROUP BY xtp_1.tenant_id, xtp_1.plan_id, xtp_1.quantityuom) bpt ON ((((bpt.plan_id)::text = (xtp.planning_id)::text) AND ((bpt.tenant_id)::text = (xtp.tenant_id)::text))))
+     LEFT JOIN ( SELECT xtp_1.plan_id,
+            xtp_1.quantityuom AS sellquantiyuom,
+            xtp_1.tenant_id,
+            sum(xtp_1.planned_quantity) AS sellquantity
+           FROM xceler_tradeplanningservice_plannedtradeobligation xtp_1
+          WHERE (xtp_1.trade_transaction_type = 1)
+          GROUP BY xtp_1.tenant_id, xtp_1.plan_id, xtp_1.quantityuom) spt ON ((((spt.plan_id)::text = (xtp.planning_id)::text) AND ((spt.tenant_id)::text = (xtp.tenant_id)::text))))
+     LEFT JOIN ( SELECT xts.uuid,
+            xts.created_by,
+            xts.created_timestamp,
+            xts.tenant_id,
+            xts.updated_by,
+            xts.updated_timestamp,
+            xts.notes,
+            xts.planned_obligation_id,
+            xts.trade_id,
+            xts.trade_type,
+            xts.charterparty,
+            xts.freight_capacity,
+            xts.imo,
+            xts.vessel_capacity,
+            xts.vessel_flag,
+            xts.vessel_id,
+            xts.vessel_name,
+            xts.year,
+            xts.barge,
+            xts.connecting_vessel,
+            xts.planned_obligation_ids,
+            xts.tugboat,
+            xts.plan_id,
+            xts.allocation_type
+           FROM xceler_transportallocationservice_seafreightdetails xts) sfd ON ((((sfd.plan_id)::text = (xtp.planning_id)::text) AND ((sfd.tenant_id)::text = (xtp.tenant_id)::text))))
+     LEFT JOIN ( SELECT xts1.uuid,
+            xts1.created_by,
+            xts1.created_timestamp,
+            xts1.tenant_id,
+            xts1.updated_by,
+            xts1.updated_timestamp,
+            xts1.laycan_date,
+            xts1.load_port,
+            xts1.load_rate,
+            xts1.notes,
+            xts1.sailing_date,
+            xts1.vessel_id,
+            xts1.barge,
+            xts1.tugboat,
+            xts1.laycanfrom,
+            xts1.laycanto,
+            xts1.laycan_from,
+            xts1.laycan_to
+           FROM xceler_transportallocationservice_seafreightloaddetails xts1) sld ON ((((sld.vessel_id)::text = (sfd.vessel_id)::text) AND ((sld.tenant_id)::text = (sfd.tenant_id)::text))))
+     LEFT JOIN ( SELECT xts2.uuid,
+            xts2.created_by,
+            xts2.created_timestamp,
+            xts2.tenant_id,
+            xts2.updated_by,
+            xts2.updated_timestamp,
+            xts2.discharge_port,
+            xts2.discharge_rate,
+            xts2.eta_from,
+            xts2.eta_to,
+            xts2.notes,
+            xts2.vessel_id
+           FROM xceler_transportallocationservice_seafreightunloaddetails xts2) suld ON ((((suld.vessel_id)::text = (sfd.vessel_id)::text) AND ((suld.tenant_id)::text = (sfd.tenant_id)::text))));</createView>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-43">
+        <createView fullDefinition="false" viewName="vw_cb_and_transactions">SELECT a.source,
+    a.account_number,
+    a.amount,
+    a.transaction_date,
+    a.credit_debit,
+    ad.account_currency,
+    ad.bank_code
+   FROM (( SELECT 'TXN'::text AS source,
+            treasury_statement_transaction.account_number,
+            treasury_statement_transaction.amount,
+            treasury_statement_transaction.transaction_date,
+            treasury_statement_transaction.credit_debit
+           FROM treasury_statement_transaction
+        UNION ALL
+         SELECT 'CB'::text AS source,
+            tcb.account_number,
+            tcb.booked_amount,
+            tcb.value_date,
+            tcb.transaction_type
+           FROM treasury_cash_booking tcb) a
+     JOIN xceler_business_master_bank_account ad ON (((a.account_number)::text = (ad.account_no)::text)));</createView>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-44">
+        <createView fullDefinition="false" viewName="vw_bank_account">SELECT tst.uuid AS statement_uuid,
+    ad.account_no AS account_number,
+    tst.amount,
+    tst.transaction_date,
+    tst.credit_debit,
+    tst.info_to_account_owner,
+    tst.transaction_code,
+    bad.bank_name
+   FROM ((treasury_statement_transaction tst
+     LEFT JOIN xceler_business_master_bank_account ad ON (((ad.account_no)::text = (tst.account_number)::text)))
+     LEFT JOIN xceler_business_master_bank_master bad ON ((bad.uuid = (ad.bank_account_id)::uuid)))
+  WHERE ((tst.account_number)::text IN ( SELECT DISTINCT tst.account_number
+           FROM xceler_business_master_bank_account adt))
+  ORDER BY tst.account_number;</createView>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-45">
+        <addUniqueConstraint columnNames="statement_line, entry_date, transaction_date" constraintName="transaction_unique_constraint" tableName="treasury_statement_transaction"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-46">
+        <createView fullDefinition="false" viewName="vw_latest_statements">SELECT a.account_number,
+    a.account_currency,
+    a.closing_available_balance,
+    a.statement_date,
+    a.bank_code,
+    a.rn
+   FROM ( SELECT tas.account_number,
+            tas.account_currency,
+            tas.closing_available_balance,
+            tas.statement_date,
+            ad.bank_code,
+            row_number() OVER (PARTITION BY ad.account_no ORDER BY tas.statement_date DESC) AS rn
+           FROM (treasury_account_statement tas
+             JOIN xceler_business_master_bank_account ad ON (((tas.account_number)::text = (ad.account_no)::text)))) a
+  WHERE (a.rn = 1);</createView>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-47">
+        <createView fullDefinition="false" viewName="vw_xceler_bank_company_account">SELECT account_company_fx.account_currency,
+    account_company_fx.account_no,
+    account_company_fx.company_currency,
+    account_company_fx.company_code,
+    account_company_fx.bank_code,
+    account_company_fx.fx_index_pair,
+    account_company_fx.bank_name,
+    account_company_fx.fx_index_rate,
+    account_company_fx.price_date,
+    account_company_fx.tenant_id,
+    account_company_fx.rn
+   FROM ( SELECT acc.account_currency,
+            acc.account_no,
+            xcc.currency AS company_currency,
+            xcc.code AS company_code,
+            bad.bank_code,
+            xef.fx_index_pair,
+            bad.bank_name,
+                CASE
+                    WHEN ((xcc.currency)::text = (acc.account_currency)::text) THEN (1)::double precision
+                    ELSE xef.fx_index_rate
+                END AS fx_index_rate,
+            xef.price_date,
+            xcc.tenant_id,
+            row_number() OVER (PARTITION BY acc.account_no, xef.fx_index_pair ORDER BY xef.price_date DESC) AS rn
+           FROM (((xceler_business_master_bank_account acc
+             JOIN xceler_configservice_company xcc ON (((acc.company_code)::text = (xcc.code)::text)))
+             LEFT JOIN xceler_business_master_bank_master bad ON (((bad.bank_code)::text = (acc.bank_code)::text)))
+             LEFT JOIN xceler_eodservice_fxmarketdata xef ON (((((acc.account_currency)::text || '/'::text) || (xcc.currency)::text) = (xef.fx_index_pair)::text)))) account_company_fx
+  WHERE (account_company_fx.rn = 1);</createView>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-48">
+        <createView fullDefinition="false" viewName="vw_treasury_company_account_bank_balance">SELECT ad.account_no,
+    xcc.code,
+    bad.bank_name,
+    bad.bank_code,
+    tab.available_balance,
+    xcc.currency,
+    ad.account_currency,
+    bad.currency AS bank_currency,
+        CASE
+            WHEN ((xcc.currency)::text = (ad.account_currency)::text) THEN (1)::double precision
+            ELSE xef.fx_index_rate
+        END AS fx_index_rate,
+    tab.prev_available_balance,
+    tab.balance_company,
+    tab.balance_date,
+    xcc.tenant_id,
+    row_number() OVER (ORDER BY ad.account_no) AS key
+   FROM ((((xceler_configservice_company xcc
+     LEFT JOIN xceler_business_master_bank_account ad ON (((xcc.code)::text = (ad.company_code)::text)))
+     LEFT JOIN xceler_business_master_bank_master bad ON (((ad.bank_code)::text = (bad.bank_code)::text)))
+     LEFT JOIN treasury_account_balance tab ON (((tab.account_number)::text = (ad.account_no)::text)))
+     LEFT JOIN ( SELECT DISTINCT ON (xefx.fx_index_pair) xefx.fx_index_pair,
+            xefx.fx_index_rate
+           FROM xceler_eodservice_fxmarketdata xefx
+          ORDER BY xefx.fx_index_pair, xefx.price_date DESC) xef ON (((((ad.account_currency)::text || '/'::text) || (xcc.currency)::text) = (xef.fx_index_pair)::text)))
+  ORDER BY xcc.code;</createView>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-49">
+        <createIndex indexName="account_details_account_no_idx" tableName="xceler_business_master_bank_account" unique="true">
+            <column name="account_no"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-50">
+        <createIndex indexName="bank_limit_facility_code" tableName="xceler_business_master_bank_limit">
+            <column name="facility_code"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-51">
+        <createIndex indexName="bank_limit_product_info" tableName="xceler_business_master_bank_limit_product_info">
+            <column name="product"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-52">
+        <createIndex indexName="bank_limit_product_info_participant" tableName="xceler_business_master_product_info_participant_info">
+            <column name="participant"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-53">
+        <addUniqueConstraint columnNames="strategy_id" constraintName="xceler_configservice_simple_processing_strategy_strategy_id_key" tableName="xceler_configservice_simple_processing_strategy"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-54">
+        <addUniqueConstraint columnNames="inventory_id" constraintName="xceler_inventory_inventory_id_key" tableName="xceler_inventory"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-55">
+        <addUniqueConstraint columnNames="transfer_id" constraintName="xceler_stock_movement_transfer_id_key" tableName="xceler_stock_movement"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-56">
+        <createSequence cacheSize="1" cycle="false" dataType="bigint" incrementBy="1" maxValue="9223372036854775807" minValue="1" sequenceName="uuid" startValue="1"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-57">
+        <createTable tableName="ois_storage_location">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="ois_storage_location_pkey"/>
+            </column>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="storage_id" type="VARCHAR(255)"/>
+            <column name="storage_name" type="VARCHAR(255)"/>
+            <column name="stored_capacity" type="JSONB"/>
+            <column name="type" type="VARCHAR(255)"/>
+            <column name="storage_facility" type="VARCHAR(255)"/>
+            <column name="owner_name" type="VARCHAR(255)"/>
+            <column name="comingle" type="VARCHAR(255)"/>
+            <column name="location" type="JSONB"/>
+            <column name="status" type="VARCHAR(50)"/>
+            <column name="addrress" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-58">
+        <createTable tableName="taomish_tenant_postinghistory">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_taomish_tenant_postinghistory"/>
+            </column>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="input_payload" type="TEXT"/>
+            <column name="external_system" type="VARCHAR(255)"/>
+            <column name="external_system_response" type="TEXT"/>
+            <column name="posting_payload" type="TEXT"/>
+            <column name="unique_id" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-59">
+        <createTable tableName="treasury_account_transaction">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="treasury_account_transactions_pkey"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="account_number" type="VARCHAR(255)"/>
+            <column name="account_currency" type="VARCHAR(255)"/>
+            <column name="transaction_source" type="VARCHAR(255)"/>
+            <column name="transaction_source_id" type="VARCHAR(255)"/>
+            <column name="transaction_source_sub_id" type="VARCHAR(255)"/>
+            <column name="post_date" type="date"/>
+            <column name="value_date" type="date"/>
+            <column name="transaction_type" type="VARCHAR(255)"/>
+            <column name="booked_amount" type="FLOAT8"/>
+            <column name="booked_currency" type="VARCHAR(255)"/>
+            <column name="fx_pair" type="VARCHAR(255)"/>
+            <column name="fx_rate" type="VARCHAR(255)"/>
+            <column name="reference_number" type="VARCHAR(255)"/>
+            <column name="transaction_purpose" type="VARCHAR(255)"/>
+            <column name="transaction_cost" type="FLOAT8"/>
+            <column name="transaction_status" type="VARCHAR(255)"/>
+            <column name="transaction_amount" type="JSONB"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-60">
+        <createTable tableName="treasury_credit_transaction">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="treasury_credit_transaction_pkey"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="facility_code" type="VARCHAR(255)"/>
+            <column name="entity" type="VARCHAR(255)"/>
+            <column name="interest_type" type="VARCHAR(255)"/>
+            <column name="amount" type="FLOAT8"/>
+            <column name="transaction_approval_date" type="date"/>
+            <column name="transaction_start_date" type="date"/>
+            <column name="transaction_end_date" type="date"/>
+            <column name="outflow_bank_account_number" type="VARCHAR(255)"/>
+            <column name="outflow_bank_code" type="VARCHAR(25)"/>
+            <column name="first_principal_repayment_date" type="date"/>
+            <column name="calculation_method" type="VARCHAR(255)"/>
+            <column name="periodicity_type" type="VARCHAR(255)"/>
+            <column name="interest_rate" type="FLOAT8"/>
+            <column name="index_value" type="FLOAT8"/>
+            <column name="margin_value" type="FLOAT8"/>
+            <column name="index" type="VARCHAR(255)"/>
+            <column name="calculation_bases" type="VARCHAR(255)"/>
+            <column name="attachments" type="JSONB"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-61">
+        <createTable tableName="treasury_credit_transaction_repayment_list">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="treasury_credit_transaction_repayment_list_pkey"/>
+            </column>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="repayment_id" type="VARCHAR(255)"/>
+            <column name="principal_repayment_amount" type="FLOAT8"/>
+            <column name="actual_repayment_amount" type="FLOAT8"/>
+            <column name="scheduled_repayment_date" type="FLOAT8"/>
+            <column name="repayment_remark" type="TEXT"/>
+            <column name="status" type="VARCHAR(255)"/>
+            <column name="credit_transaction_uuid" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-62">
+        <createTable tableName="treasury_fx_cash_booking">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="treasury_fx_cash_booking_pkey"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="booking_type" type="VARCHAR(255)"/>
+            <column name="broker" type="VARCHAR(255)"/>
+            <column name="broker_account_no" type="VARCHAR(255)"/>
+            <column name="buy_notional" type="TEXT"/>
+            <column name="company" type="VARCHAR(255)"/>
+            <column name="cost" type="VARCHAR(255)"/>
+            <column name="counterparty" type="VARCHAR(255)"/>
+            <column name="delivery_status" type="VARCHAR(255)"/>
+            <column name="expiry_date" type="date"/>
+            <column name="fx_pair" type="VARCHAR(255)"/>
+            <column name="initial_margin" type="VARCHAR(255)"/>
+            <column name="maintainance_margin" type="VARCHAR(255)"/>
+            <column name="profit_center" type="VARCHAR(255)"/>
+            <column name="rate" type="VARCHAR(255)"/>
+            <column name="reference_price" type="VARCHAR(255)"/>
+            <column name="sell_notional" type="TEXT"/>
+            <column name="settelment_date" type="date"/>
+            <column name="settlement_currency" type="VARCHAR(255)"/>
+            <column name="trade_date" type="date"/>
+            <column name="trader" type="VARCHAR(255)"/>
+            <column name="tenor" type="INTEGER"/>
+            <column name="maintenance_margin" type="VARCHAR(255)"/>
+            <column name="settlement_date" type="date"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-63">
+        <createTable tableName="treasury_fx_futures">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="treasury_fx_futures_pkey"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="buysell" type="VARCHAR(255)"/>
+            <column name="clearing_broker" type="VARCHAR(255)"/>
+            <column name="clearing_broker_account_no" type="VARCHAR(255)"/>
+            <column name="clearing_fee" type="FLOAT8"/>
+            <column name="company" type="VARCHAR(255)"/>
+            <column name="cost" type="FLOAT8"/>
+            <column name="currency" type="VARCHAR(255)"/>
+            <column name="exchange_for" type="VARCHAR(255)"/>
+            <column name="execution_broker" type="VARCHAR(255)"/>
+            <column name="execution_fee" type="FLOAT8"/>
+            <column name="expiry_date" type="date"/>
+            <column name="expiry_month" type="VARCHAR(255)"/>
+            <column name="future_product_ticker" type="VARCHAR(255)"/>
+            <column name="initial_margin" type="FLOAT8"/>
+            <column name="lot" type="FLOAT8"/>
+            <column name="lot_size" type="FLOAT8"/>
+            <column name="maintainance_margin" type="FLOAT8"/>
+            <column name="price" type="FLOAT8"/>
+            <column name="product_code" type="VARCHAR(255)"/>
+            <column name="profit_center" type="VARCHAR(255)"/>
+            <column name="tag" type="VARCHAR(255)"/>
+            <column name="trade_date" type="date"/>
+            <column name="trader" type="VARCHAR(255)"/>
+            <column name="uom" type="VARCHAR(255)"/>
+            <column name="expiry_status" type="BOOLEAN"/>
+            <column name="netted_status" type="BOOLEAN"/>
+            <column name="rollover_status" type="BOOLEAN"/>
+            <column name="rollover_spread" type="FLOAT8"/>
+            <column name="parent_row_id" type="UUID"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-64">
+        <createTable tableName="xceler_physicaltradeservice_dealslip">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="xceler_physicaltradeservice_dealslip_pkey"/>
+            </column>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="deal_id" type="VARCHAR(255)"/>
+            <column name="trade_date_time" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="trade_id" type="VARCHAR(255)"/>
+            <column name="trade_transaction_type" type="INTEGER"/>
+            <column name="commodity" type="VARCHAR(255)"/>
+            <column name="brand" type="VARCHAR(255)"/>
+            <column name="grade" type="VARCHAR(255)"/>
+            <column name="counterparty" type="VARCHAR(255)"/>
+            <column name="quantity" type="JSONB"/>
+            <column name="price_type" type="VARCHAR(255)"/>
+            <column name="trade_price" type="JSONB"/>
+            <column name="incoterm" type="VARCHAR(255)"/>
+            <column name="shipment_month" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="port" type="VARCHAR(255)"/>
+            <column name="company" type="VARCHAR(255)"/>
+            <column name="profitcenter" type="VARCHAR(255)"/>
+            <column name="trader_name" type="VARCHAR(255)"/>
+            <column name="paymentterm" type="VARCHAR(255)"/>
+            <column name="remarks" type="VARCHAR(255)"/>
+            <column name="trade_date" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="fob" type="FLOAT8"/>
+            <column name="frieght" type="FLOAT8"/>
+            <column name="insurance" type="FLOAT8"/>
+            <column name="commission" type="FLOAT8"/>
+            <column name="premium_disc" type="FLOAT8"/>
+            <column name="brokerage" type="FLOAT8"/>
+            <column name="others" type="FLOAT8"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-65">
+        <createTable tableName="xceler_store">
+            <column name="uuid" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="xceler_store_pkey"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)"/>
+            <column name="created_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="tenant_id" type="VARCHAR(255)"/>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_timestamp" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="username" type="VARCHAR(255)"/>
+            <column name="valid_from" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="valid_to" type="TIMESTAMP WITHOUT TIME ZONE"/>
+            <column name="user_id" type="VARCHAR(255)"/>
+            <column name="type" type="VARCHAR(50)"/>
+            <column name="payload" type="JSONB"/>
+            <column name="status" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-66">
+        <addColumn tableName="xceler_transportallocationservice_seafreightloaddetails">
+            <column name="barge" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-67">
+        <addColumn tableName="xceler_transportallocationservice_seafreightloaddetails">
+            <column name="tugboat" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-68">
+        <addColumn tableName="xceler_transportallocationservice_seafreightloaddetails">
+            <column name="laycanfrom" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-69">
+        <addColumn tableName="xceler_transportallocationservice_seafreightloaddetails">
+            <column name="laycanto" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-70">
+        <addColumn tableName="xceler_transportallocationservice_seafreightloaddetails">
+            <column name="laycan_from" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-71">
+        <addColumn tableName="xceler_transportallocationservice_seafreightloaddetails">
+            <column name="laycan_to" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-72">
+        <addColumn tableName="taomish_tenant_configuration">
+            <column name="posting_url" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-73">
+        <addColumn tableName="xceler_actualizationservice_actualizeddocuments">
+            <column name="shipment_document" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-74">
+        <addColumn tableName="taomish_tenant_configuration">
+            <column name="transform_text" type="text"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-75">
+        <addColumn tableName="xceler_actualizationservice_billoflanding">
+            <column defaultValue="Draft" name="status" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-76">
+        <addColumn tableName="xceler_actualizationservice_billoflanding">
+            <column name="remarks" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-77">
+        <addColumn tableName="xceler_transportallocationservice_seafreightdetails">
+            <column name="plan_id" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-78">
+        <addColumn tableName="xceler_actualizationservice_billoflanding">
+            <column name="ship_onboard" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-79">
+        <addColumn tableName="xceler_transportallocationservice_seafreightdetails">
+            <column defaultValue="Vessel" name="allocation_type" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-80">
+        <addColumn tableName="xceler_actualizationservice_billoflanding">
+            <column name="trade_id" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-81">
+        <addColumn tableName="ois_purchase_order">
+            <column name="available_quantity" type="float8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-82">
+        <addColumn tableName="xceler_configservice_company">
+            <column name="external_company_code2" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-83">
+        <addColumn tableName="xceler_configservice_commodity">
+            <column name="commodity_external_code2" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-84">
+        <addColumn tableName="xceler_configservice_company">
+            <column name="external_company_code3" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-85">
+        <addColumn tableName="vessel_master">
+            <column name="deadweight_tonnage" type="int4"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-86">
+        <addColumn tableName="xceler_configservice_company">
+            <column name="external_company_code4" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-87">
+        <addColumn tableName="xceler_futuretradeservice_futuretrade">
+            <column name="cost" type="float8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-88">
+        <addColumn tableName="xceler_configservice_counterparty">
+            <column name="counterparty_external_reference2" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-89">
+        <addColumn tableName="xceler_transportallocationservice_bookingmanagement">
+            <column name="stowageplan" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-90">
+        <addColumn tableName="xceler_transportallocationservice_bookingmanagement">
+            <column name="charterparty" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-91">
+        <addColumn tableName="xceler_futuretradeservice_futuretrade">
+            <column name="initial_margin" type="float8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-92">
+        <addColumn tableName="xceler_transportallocationservice_bookingmanagement">
+            <column name="laycanfrom" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-93">
+        <addColumn tableName="xceler_futuretradeservice_futuretrade">
+            <column name="maintenance_margin" type="float8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-94">
+        <addColumn tableName="xceler_transportallocationservice_bookingmanagement">
+            <column name="laycanto" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-95">
+        <addColumn tableName="xceler_futuretradeservice_futuretrade">
+            <column name="rollover_status" type="bool"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-96">
+        <addColumn tableName="xceler_transportallocationservice_bookingmanagement">
+            <column name="loadport" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-97">
+        <addColumn tableName="xceler_futuretradeservice_futuretrade">
+            <column name="rollover_spread" type="float8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-98">
+        <addColumn tableName="xceler_futuretradeservice_futuretrade">
+            <column name="parent_row_id" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-99">
+        <addColumn tableName="xceler_transportallocationservice_bookingmanagement">
+            <column name="unloadport" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-100">
+        <addColumn tableName="xceler_transportallocationservice_bookingmanagement">
+            <column name="charter_party" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-101">
+        <addColumn tableName="xceler_futuretradeservice_futuretrade">
+            <column name="product_code" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-102">
+        <addColumn tableName="xceler_transportallocationservice_bookingmanagement">
+            <column name="laycan_from" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-103">
+        <addColumn tableName="xceler_transportallocationservice_bookingmanagement">
+            <column name="laycan_to" type="timestamp"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-104">
+        <addColumn tableName="xceler_transportallocationservice_bookingmanagement">
+            <column name="load_port" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-105">
+        <addColumn tableName="xceler_transportallocationservice_bookingmanagement">
+            <column name="stowage_plan" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-106">
+        <addColumn tableName="xceler_transportallocationservice_bookingmanagement">
+            <column name="unload_port" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-107">
+        <addColumn tableName="xceler_transportallocationservice_bookingmanagement">
+            <column name="person_in_charge" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-108">
+        <addColumn tableName="xceler_transportallocationservice_bookingmanagement">
+            <column defaultValueNumeric="0.0" name="vessel_capacity" type="float8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-109">
+        <addColumn tableName="xceler_tradeplanningservice_plannedtradeobligation">
+            <column defaultValueNumeric="0.0" name="premiun_cost" type="float8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-110">
+        <addColumn tableName="xceler_tradeplanningservice_plannedtradeobligation">
+            <column defaultValueNumeric="0.0" name="discount_cost" type="float8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-111">
+        <addColumn tableName="xceler_tradesettlementservice_tradeinvoicelineitem">
+            <column name="item_category" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-112">
+        <addColumn tableName="xceler_tradesettlementservice_tradeinvoicelineitem">
+            <column name="gl_code" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-113">
+        <addColumn tableName="xceler_tradeplanningservice_plannedtradeobligation">
+            <column defaultValueNumeric="0.0" name="total_trade_qty" type="float8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-114">
+        <addColumn tableName="xceler_tradeplanningservice_plannedtradeobligation">
+            <column name="broker_reference_number" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-115">
+        <addColumn tableName="xceler_tradesettlementservice_tradeinvoicelineitem">
+            <column name="ship_doc_number" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-116">
+        <addColumn tableName="xceler_tradeplanningservice_plannedtradeobligation">
+            <column name="provisional_price_uom" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-117">
+        <addColumn tableName="xceler_tradeplanningservice_plannedtradeobligation">
+            <column name="provisional_price_currency" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-118">
+        <addColumn tableName="xceler_tradeplanningservice_plannedtradeobligation">
+            <column defaultValue="active" name="planned_obligation_status" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-119">
+        <addColumn tableName="xceler_tradeplanningservice_plannedtradeobligation">
+            <column name="parent_planned_obligation" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-120">
+        <addColumn tableName="xceler_tradeplanningservice_plannedtradeobligation">
+            <column name="shipment_month" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-121">
+        <addColumn tableName="xceler_tradesettlementservice_tradeinvoice">
+            <column name="total_in_words" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-122">
+        <addColumn tableName="xceler_tradesettlementservice_tradeinvoice">
+            <column name="invoice_document" type="bytea"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-123">
+        <addColumn tableName="xceler_tradesettlementservice_tradeinvoice">
+            <column name="final_invoice_type" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-124">
+        <addColumn tableName="xceler_tradesettlementservice_tradeinvoice">
+            <column name="old_invoice_id" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-125">
+        <addColumn tableName="xceler_tradesettlementservice_tradeinvoice">
+            <column name="full_invoice_type" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-126">
+        <addColumn tableName="xceler_tradesettlementservice_tradeinvoice">
+            <column name="counterparty_type" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-127">
+        <addColumn tableName="xceler_physicaltradeservice_physicaltrade">
+            <column name="broker_reference" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-128">
+        <addColumn tableName="xceler_physicaltradeservice_physicaltrade">
+            <column defaultValueBoolean="false" name="paper_trade" type="bool"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-129">
+        <addColumn tableName="xceler_physicaltradeservice_physicaltrade">
+            <column defaultValueNumeric="0.0" name="settlement_tolerance_percentage" type="float8"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-130">
+        <addColumn tableName="xceler_physicaltradeservice_physicaltrade">
+            <column name="trade_type" type="varchar(255 BYTE)"/>
+        </addColumn>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-131">
+        <addPrimaryKey columnNames="uuid" constraintName="ois_campaign_pkey" tableName="ois_campaign"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-132">
+        <addForeignKeyConstraint baseColumnNames="bank_limit_uuid" baseTableName="xceler_business_master_bank_limit_product_info" constraintName="fk_bank_limit_uuid" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="xceler_business_master_bank_limit" validate="true"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-133">
+        <addForeignKeyConstraint baseColumnNames="credit_transaction_uuid" baseTableName="treasury_credit_transaction_repayment_list" constraintName="fk_credit_transaction_uuid" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="treasury_credit_transaction" validate="true"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-134">
+        <addForeignKeyConstraint baseColumnNames="product_info_uuid" baseTableName="xceler_business_master_product_info_participant_info" constraintName="fk_product_info_uuid" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="uuid" referencedTableName="xceler_business_master_bank_limit_product_info" validate="true"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-135">
+        <addForeignKeyConstraint baseColumnNames="statement_id" baseTableName="treasury_statement_transaction" constraintName="fk_statement_transaction" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="s_id" referencedTableName="treasury_account_statement" validate="true"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-136">
+        <dropForeignKeyConstraint baseTableName="batch_job_execution_context" constraintName="job_exec_ctx_fk"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-137">
+        <dropForeignKeyConstraint baseTableName="batch_job_execution_params" constraintName="job_exec_params_fk"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-138">
+        <dropForeignKeyConstraint baseTableName="batch_step_execution" constraintName="job_exec_step_fk"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-139">
+        <dropForeignKeyConstraint baseTableName="batch_job_execution" constraintName="job_inst_exec_fk"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-140">
+        <dropForeignKeyConstraint baseTableName="batch_step_execution_context" constraintName="step_exec_ctx_fk"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-141">
+        <dropUniqueConstraint constraintName="job_inst_un" tableName="batch_job_instance"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-142">
+        <dropTable tableName="account_details"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-143">
+        <dropTable tableName="bank_account_details"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-144">
+        <dropPrimaryKey constraintName="bank_limits_pkey" tableName="bank_limits"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-145">
+        <dropPrimaryKey constraintName="batch_job_execution_context_pkey" tableName="batch_job_execution_context"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-146">
+        <dropPrimaryKey constraintName="batch_job_execution_pkey" tableName="batch_job_execution"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-147">
+        <dropPrimaryKey constraintName="batch_job_instance_pkey" tableName="batch_job_instance"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-148">
+        <dropPrimaryKey constraintName="batch_step_execution_context_pkey" tableName="batch_step_execution_context"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-149">
+        <dropPrimaryKey constraintName="batch_step_execution_pkey" tableName="batch_step_execution"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-150">
+        <dropPrimaryKey constraintName="ctrm_audit_log_pkey" tableName="ctrm_audit_log"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-1">
+        <modifyDataType columnName="clause_description" newDataType="clob" tableName="clause_contract_master"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-2">
+        <modifyDataType columnName="code" newDataType="varchar(16)" tableName="xceler_configservice_brand"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-3">
+        <modifyDataType columnName="code" newDataType="varchar(16)" tableName="xceler_configservice_calendar"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-4">
+        <modifyDataType columnName="code" newDataType="varchar(16)" tableName="xceler_configservice_commodity"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-5">
+        <modifyDataType columnName="code" newDataType="varchar(16)" tableName="xceler_configservice_company"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-6">
+        <modifyDataType columnName="code" newDataType="varchar(16)" tableName="xceler_configservice_counterparty"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-7">
+        <modifyDataType columnName="code" newDataType="varchar(16)" tableName="xceler_configservice_cropseason"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-8">
+        <modifyDataType columnName="code" newDataType="varchar(16)" tableName="xceler_configservice_fxirindex"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-9">
+        <modifyDataType columnName="code" newDataType="varchar(16)" tableName="xceler_configservice_grade"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-10">
+        <modifyDataType columnName="code" newDataType="varchar(16)" tableName="xceler_configservice_location"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-11">
+        <modifyDataType columnName="code" newDataType="varchar(16)" tableName="xceler_configservice_paymentterm"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-12">
+        <modifyDataType columnName="code" newDataType="varchar(16)" tableName="xceler_configservice_physicalbasisindex"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-13">
+        <modifyDataType columnName="code" newDataType="varchar(16)" tableName="xceler_configservice_profitcenter"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-14">
+        <modifyDataType columnName="dead_weight_tonnage" newDataType="int" tableName="vessel_master"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-15">
+        <modifyDataType columnName="freight_capacity" newDataType="int" tableName="vessel_master"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-16">
+        <modifyDataType columnName="gross_tonnage" newDataType="int" tableName="vessel_master"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-17">
+        <modifyDataType columnName="net_tonnage" newDataType="int" tableName="vessel_master"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-18">
+        <addNotNullConstraint columnDataType="boolean" columnName="status" tableName="ois_campaign" validate="true"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-19">
+        <modifyDataType columnName="user_type" newDataType="clob" tableName="xceler_authservice_usermaster"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-20">
+        <modifyDataType columnName="vessel_capacity" newDataType="int" tableName="vessel_master"/>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-21">
+        <createView fullDefinition="false" replaceIfExists="true" viewName="xceler_dashboardservice_physicalm2mrealizedpnl">SELECT uuid_generate_v4() AS uuid,
+    xpord.obligation_id AS tradeid,
+    xpord.price_type AS tradetype,
+    xpord.trade_transaction_type AS trantype,
+        CASE
+            WHEN ((xpord.obligation_status)::text = 'planned'::text) THEN xpord.planned_quantity
+            ELSE (xpord.trade_quantity - xpord.planned_quantity)
+        END AS obligationquantity,
+    xpord.trade_quantity AS quantity,
+    xpord.quantityuom,
+    xpord.price AS tradeprice,
+    xpord.price_currency AS currency,
+    xpord.actual_load_quantity AS actualloadquantity,
+    xpord.actual_unload_quantity AS actualunloadquantity,
+    xpord.obligation_status AS obligationstatus,
+    xpord.planned_quantity AS plannedquantity,
+    xptrd.trader_name AS trader,
+    to_char(xpord.delivery_end_date, 'FMMonthYYYY'::text) AS deliveryenddate,
+    pubrd.realized_date AS realizeddate,
+    pubrd.realised_pnl_today AS realizedpnl,
+    pubrd.realized_position AS realizedposition,
+    pubrd.mtm_pnl AS m2mpnl,
+    pubrd.eoduom AS m2muom,
+    pubrd.eoduom AS realizeduom,
+    pubrd.eod_run_date AS rundate,
+    pubrd.commodity,
+    pubrd.profitcenter,
+    pubrd.counterparty,
+    pubrd.company,
+    pubrd.tenant_id AS tenantid,
+        CASE
+            WHEN (xtrdprc.priced_quantity IS NULL) THEN (0.0)::double precision
+            ELSE xtrdprc.priced_quantity
+        END AS pricedquantity
+   FROM (((( SELECT xceler_eodservice_publisheddata.uuid,
+            xceler_eodservice_publisheddata.created_by,
+            xceler_eodservice_publisheddata.created_timestamp,
+            xceler_eodservice_publisheddata.end_date,
+            xceler_eodservice_publisheddata.start_date,
+            xceler_eodservice_publisheddata.tenant_id,
+            xceler_eodservice_publisheddata.updated_by,
+            xceler_eodservice_publisheddata.updated_timestamp,
+            xceler_eodservice_publisheddata.buy_open_position,
+            xceler_eodservice_publisheddata.closed_pnl_today,
+            xceler_eodservice_publisheddata.closed_positon,
+            xceler_eodservice_publisheddata.commodity,
+            xceler_eodservice_publisheddata.company,
+            xceler_eodservice_publisheddata.counterparty,
+            xceler_eodservice_publisheddata.eod_currency,
+            xceler_eodservice_publisheddata.eod_job_name,
+            xceler_eodservice_publisheddata.eod_run_date,
+            xceler_eodservice_publisheddata.eoduom,
+            xceler_eodservice_publisheddata.finance_cost,
+            xceler_eodservice_publisheddata.freight_cost,
+            xceler_eodservice_publisheddata.fx_exposure,
+            xceler_eodservice_publisheddata.fx_exposure_currency,
+            xceler_eodservice_publisheddata.insurance_cost,
+            xceler_eodservice_publisheddata.mtm_pnl,
+            xceler_eodservice_publisheddata.mtm_settlement,
+            xceler_eodservice_publisheddata.nbv,
+            xceler_eodservice_publisheddata.obligationid,
+            xceler_eodservice_publisheddata.other_cost,
+            xceler_eodservice_publisheddata.pnl_monthly,
+            xceler_eodservice_publisheddata.pnl_yearly,
+            xceler_eodservice_publisheddata.price_currency,
+            xceler_eodservice_publisheddata.price_exposure,
+            xceler_eodservice_publisheddata.profitcenter,
+            xceler_eodservice_publisheddata.raw_data_id,
+            xceler_eodservice_publisheddata.realised_pnl_today,
+            xceler_eodservice_publisheddata.realized_date,
+            xceler_eodservice_publisheddata.realized_position,
+            xceler_eodservice_publisheddata.sell_open_position,
+            xceler_eodservice_publisheddata.tax_cost,
+            xceler_eodservice_publisheddata.total_cost,
+            xceler_eodservice_publisheddata.trade_id,
+            xceler_eodservice_publisheddata.prev_mtm_pnl,
+            xceler_eodservice_publisheddata.prev_open_buy_position,
+            xceler_eodservice_publisheddata.prev_open_sell_position,
+            xceler_eodservice_publisheddata.prev_realised_pnl,
+            xceler_eodservice_publisheddata.prev_realised_postion,
+            xceler_eodservice_publisheddata.prev_closed_postion,
+            eachitem.oblid,
+            eachitem.topdate
+           FROM (xceler_eodservice_publisheddata
+             JOIN ( SELECT xceler_eodservice_publisheddata_1.obligationid AS oblid,
+                    max(xceler_eodservice_publisheddata_1.eod_run_date) AS topdate
+                   FROM xceler_eodservice_publisheddata xceler_eodservice_publisheddata_1
+                  GROUP BY xceler_eodservice_publisheddata_1.obligationid) eachitem ON (((eachitem.topdate = xceler_eodservice_publisheddata.eod_run_date) AND ((eachitem.oblid)::text = (xceler_eodservice_publisheddata.obligationid)::text))))) pubrd
+     LEFT JOIN xceler_eodservice_physicalobligationrawdata xpord ON (((xpord.obligation_id)::text = (pubrd.obligationid)::text)))
+     LEFT JOIN xceler_eodservice_physicaltraderawdata xptrd ON (((xpord.trade_id)::text = (xptrd.trade_id)::text)))
+     LEFT JOIN xceler_pricingservice_tradeprice xtrdprc ON (((xpord.trade_id)::text = (xtrdprc.trade_id)::text)))
+  WHERE (((pubrd.tenant_id)::text = (xpord.tenant_id)::text) AND ((pubrd.tenant_id)::text = (xptrd.tenant_id)::text));</createView>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-22">
+        <createView fullDefinition="false" replaceIfExists="true" viewName="xceler_dashboardservice_unadjustedfuturetrades">SELECT uuid_generate_v4() AS uuid,
+    ftraw.trade_id,
+        CASE
+            WHEN (ftraw.trade_transaction_type = 1) THEN 'sell'::text
+            ELSE 'buy'::text
+        END AS trantype,
+    ftraw.commodity,
+    ftraw.trade_date AS tradedate,
+    ftraw.profitcenter,
+    ftraw.expiry_month AS expirymonth,
+    ftraw.execution_broker AS executionbroker,
+    ftraw.lot,
+    ftraw.trade_price AS tradeprice,
+    ftraw.expiry_date AS expirydate,
+    EXTRACT(days FROM ((ftraw.expiry_date)::timestamp with time zone - now())) AS daystoexpire,
+    ftraw.future_index AS futureindex,
+    ftraw.lot_size AS lotsize,
+    ftraw.exchange_for AS exchangefor,
+    ftraw.tag,
+    ftpub.mtm_pnl,
+    ftraw.company,
+    ftraw.trader_name,
+    ftraw.uom,
+    (ftpub.prev_mtm_pnl - ftpub.mtm_pnl) AS pnlchange,
+    ftraw.tenant_id
+   FROM (xceler_eodservice_futuretradeeodpublished ftpub
+     LEFT JOIN xceler_eodervice_futuretradeeodrawdata ftraw ON (((ftpub.trade_id)::text = (ftraw.trade_id)::text)))
+  WHERE ((ftraw.netting_status)::text = 'Not Netted'::text);</createView>
+    </changeSet>
+    <changeSet author="arjun (generated)" id="1676310491027-23">
+        <createView fullDefinition="false" replaceIfExists="true" viewName="xceler_settlementservice_settlementgriddata">SELECT tb1.uuid,
+    tb1.created_by,
+    tb1.created_timestamp,
+    tb1.tenant_id,
+    tb1.updated_by,
+    tb1.updated_timestamp,
+    tb1.broker,
+    tb1.circle_string_seq,
+    tb1.commodity,
+    tb1.company,
+    tb1.counterparty,
+    tb1.crop_origin,
+    tb1.delivery_date,
+    tb1.delivery_end_date,
+    tb1.delivery_start_date,
+    tb1.grade,
+    tb1.incoterm,
+    tb1.location,
+    tb1.obligation_date,
+    tb1.plan_id,
+    tb1.plan_uuid,
+    tb1.planned_obligation_id,
+    tb1.planned_quantity,
+    tb1.price_type,
+    tb1.profitcenter,
+    tb1.quantityuom,
+    tb1.reference_number,
+    tb1.trade_date_time,
+    tb1.trade_id,
+    tb1.trade_obligation_id,
+    tb1.trade_obligation_uuid,
+    tb1.trade_price,
+    tb1.trade_price_currency,
+    tb1.trade_price_uom,
+    tb1.trade_quantity,
+    tb1.trade_transaction_type,
+    tb1.trade_type,
+    tb1.trade_uuid,
+    tb1.no_of_units,
+    tb1.remarks,
+    tb1.brand,
+    tb1.season,
+    tb1.load_location,
+    tb1.unload_location,
+    tb1.payment_term,
+    tb1.trader,
+    tb1.fx_rate,
+    tb1.provisional_fx_rate,
+    tb1.provisional_price_percentage,
+    tb1.provisional_price_type,
+    tb1.provisional_price,
+    tb1.tradesettlementcurrency,
+    tb1.trade_settlement_currency,
+    tb1.premiun_cost,
+    tb1.discount_cost,
+    tb1.total_trade_qty,
+    tb1.broker_reference_number,
+    tb1.provisional_price_uom,
+    tb1.provisional_price_currency,
+    tb1.planned_obligation_status,
+    tb1.parent_planned_obligation,
+    tb1.shipment_month,
+    tb1.planid,
+    tb1.match_type,
+    tb1.tenantid
+   FROM (( SELECT xtp.uuid,
+            xtp.created_by,
+            xtp.created_timestamp,
+            xtp.tenant_id,
+            xtp.updated_by,
+            xtp.updated_timestamp,
+            xtp.broker,
+            xtp.circle_string_seq,
+            xtp.commodity,
+            xtp.company,
+            xtp.counterparty,
+            xtp.crop_origin,
+            xtp.delivery_date,
+            xtp.delivery_end_date,
+            xtp.delivery_start_date,
+            xtp.grade,
+            xtp.incoterm,
+            xtp.location,
+            xtp.obligation_date,
+            xtp.plan_id,
+            xtp.plan_uuid,
+            xtp.planned_obligation_id,
+            xtp.planned_quantity,
+            xtp.price_type,
+            xtp.profitcenter,
+            xtp.quantityuom,
+            xtp.reference_number,
+            xtp.trade_date_time,
+            xtp.trade_id,
+            xtp.trade_obligation_id,
+            xtp.trade_obligation_uuid,
+            xtp.trade_price,
+            xtp.trade_price_currency,
+            xtp.trade_price_uom,
+            xtp.trade_quantity,
+            xtp.trade_transaction_type,
+            xtp.trade_type,
+            xtp.trade_uuid,
+            xtp.no_of_units,
+            xtp.remarks,
+            xtp.brand,
+            xtp.season,
+            xtp.load_location,
+            xtp.unload_location,
+            xtp.payment_term,
+            xtp.trader,
+            xtp.fx_rate,
+            xtp.provisional_fx_rate,
+            xtp.provisional_price_percentage,
+            xtp.provisional_price_type,
+            xtp.provisional_price,
+            xtp.tradesettlementcurrency,
+            xtp.trade_settlement_currency,
+            xtp.premiun_cost,
+            xtp.discount_cost,
+            xtp.total_trade_qty,
+            xtp.broker_reference_number,
+            xtp.provisional_price_uom,
+            xtp.provisional_price_currency,
+            xtp.planned_obligation_status,
+            xtp.parent_planned_obligation,
+            xtp.shipment_month,
+            plan.planid,
+            plan.match_type,
+            plan.tenantid
+           FROM (xceler_tradeplanningservice_plannedtradeobligation xtp
+             JOIN ( SELECT xtp_1.planning_id AS planid,
+                    xtp_1.match_type,
+                    xtp_1.tenant_id AS tenantid
+                   FROM xceler_tradeplanningservice_physicaltradeplan xtp_1
+                UNION
+                 SELECT xts.planning_id AS planid,
+                        CASE
+                            WHEN (xts.stock_plan_type = 0) THEN 'BUILD'::text
+                            ELSE 'DRAW'::text
+                        END AS match_type,
+                    xts.tenant_id AS tenantid
+                   FROM xceler_tradeplanningservice_stockplan xts) plan ON ((((plan.planid)::text = (xtp.plan_id)::text) AND ((plan.tenantid)::text = (xtp.tenant_id)::text))))) tb1
+     JOIN ( SELECT DISTINCT xcc.planned_obligation_id,
+            xcc.tenant_id
+           FROM xceler_cashflowservice_cashflowdata xcc
+          WHERE ((xcc.stage = ANY (ARRAY['Accrued'::text, 'Accrued Provisional'::text])) AND (lower(xcc.type) = ANY (ARRAY['trade'::text, 'provisional'::text])) AND (xcc.cashflow_status = 'active'::text) AND ((xcc.invoice_number IS NULL) OR ((xcc.invoice_number)::text = ''::text) OR (xcc.settlement_value &gt; xcc.invoiced_settlement_value)))) cashflow ON ((((cashflow.tenant_id)::text = (tb1.tenant_id)::text) AND ((cashflow.planned_obligation_id)::text = (tb1.planned_obligation_id)::text))));</createView>
+    </changeSet>
+</databaseChangeLog>
